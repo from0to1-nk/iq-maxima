@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+    font: inherit
+}
+
+button,
+input,
+select {
+    outline: transparent;
+}
+
+
+body {
+    min-width: 320px;
+
+}
+
+.container {
+    max-width: 1315px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
