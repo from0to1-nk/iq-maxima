@@ -64,10 +64,11 @@ function scripts() {
 }
 
 function styles() {
-    return src(
+    return src([
             'node_modules/normalize.css/normalize.css',
             'node_modules/swiper/swiper-bundle.min.css',
-            'app/scss/style.scss')
+            'app/scss/style.scss'
+        ])
         .pipe(scss({
             outputStyle: 'compressed'
         }))
