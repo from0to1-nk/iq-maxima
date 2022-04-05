@@ -73,11 +73,16 @@ swiper.on('slideChange', function () {
 });
 
 
-let services_parallax = document.querySelector('.bunner-scene__parallax');
-let parallaxInstance = new Parallax(services_parallax, {
-    scalarX: 3,
-    frictionX: 0.2
-});
+let parallax = document.querySelectorAll('.scene__parallax');
+parallax.forEach(item => {
+    let parallaxInstance = new Parallax(item, {
+        scalarX: 3,
+        frictionX: 0.2
+    });
+})
+
+
+
 var swiperLabel = new Swiper(".main-banner__bottom", {
     slidesPerView: 'auto',
     spaceBetween: 70,
@@ -86,3 +91,52 @@ var swiperLabel = new Swiper(".main-banner__bottom", {
     loop: true,
     centeredSlides: true,
 });
+// var swiperPreference = new Swiper(".preference-slider", {
+//     effect: "creative",
+//     creativeEffect: {
+//         prev: {
+//             shadow: true,
+//             translate: ["-20%", 0, -1],
+//         },
+//         next: {
+//             translate: ["100%", 0, 0],
+//         },
+//     },
+//     grabCursor: true,
+//     pagination: {
+//         el: ".swiper-pagination",
+//         type: "fraction",
+//     },
+//     // navigation: {
+//     //     nextEl: ".swiper-button-next",
+//     //     prevEl: ".swiper-button-prev",
+//     // },
+// });
+let slidePreference = document.querySelectorAll('.preference-slide');
+for (let i = 1; i <= slidePreference.length; i++) {
+    slidePreference[slidePreference.length - i].style.zIndex = i;
+}
+
+slidePreference.forEach(slide => {
+
+    slide.addEventListener('click', function () {
+        console.log('click')
+        this.classList.add('move');
+        const thisSlide = this;
+
+        function addF(el) {
+            if (el.nextElementSibling) {
+                el.nextElementSibling.classList.add('active');
+
+            } else {
+                el.closest('.preference-slider').firstElementChild.classList.add('active');
+
+            }
+            el.classList.remove('active', 'move');
+            el.style.zIndex = el.style.zIndex - (slidePreference.length - 1)
+
+        }
+        setTimeout(addF, 1000, thisSlide);
+
+    })
+})

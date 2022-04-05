@@ -11,7 +11,7 @@ html {
 
 html,
 body {
-    position: relative;
+    position: relative;overflow-x: hidden;
 }
 
 a {
@@ -94,4 +94,46 @@ body {
     padding: 20px 25px;
     background: #FFCB4A;
     box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.06);
+}
+#wrapper__parallax {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        filter: blur(58px);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: linear-gradient(90deg, #D9E2EB -0.31%, rgba(217, 226, 235, 0) 100%);
+
+    }
+}
+
+.scene__parallax {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0px;
+    overflow: hidden;
+
+}
+
+.parallax-layes {
+    height: 100%;
+    width: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bunner__parallax {
+    max-width: 1400px;
+    background-image: url('../images/roundWave.svg');
+}
+
+.project__parallax {
+    background-image: url('../images/project-wave.svg');
 }

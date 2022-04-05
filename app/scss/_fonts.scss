@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Montserrat-Light';
     src: local('Montserrat-Light'),
@@ -9,6 +8,7 @@
     font-weight: 300;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Montserrat-Regular';
     src: local('Montserrat-Regular'),
@@ -19,6 +19,7 @@
     font-weight: 400;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Montserrat-Medium';
     src: local('Montserrat-Medium'),
@@ -29,6 +30,7 @@
     font-weight: 500;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Montserrat-SemiBold';
     src: local('Montserrat-SemiBold'),
@@ -50,6 +52,18 @@
     font-weight: 700;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Montserrat-Black';
+    src: local('Montserrat-Black'),
+        url('../fonts/Montserrat-Black.woff2') format('woff2'),
+        url('../fonts/Montserrat-Black.woff') format('woff'),
+        url('../fonts/Montserrat-Black.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+}
+
 @font-face {
     font-family: 'Raleway-Regular';
     src: local('Raleway-Regular'),
@@ -60,6 +74,7 @@
     font-weight: 400;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Raleway-SemiBold';
     src: local('Raleway-SemiBold'),
@@ -67,6 +82,6 @@
         url('../fonts/Raleway-SemiBold.woff') format('woff'),
         url('../fonts/Raleway-SemiBold.ttf') format('truetype');
     font-style: normal;
-    font-weight:600;
+    font-weight: 600;
     font-display: swap;
 }
