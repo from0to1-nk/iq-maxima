@@ -34,6 +34,7 @@
 
 // });
 
+//////////////////////BUNNER SLIDER /////////////////////////////////
 
 const swiper = new Swiper('.main-banner__slider', {
     // Optional parameters
@@ -72,6 +73,7 @@ swiper.on('slideChange', function () {
 
 });
 
+//////////////////////PARALLAX/////////////////////////////////
 
 let parallax = document.querySelectorAll('.scene__parallax');
 parallax.forEach(item => {
@@ -81,7 +83,7 @@ parallax.forEach(item => {
     });
 })
 
-
+//////////////////////SWIPER/////////////////////////////////
 
 var swiperLabel = new Swiper(".main-banner__bottom", {
     slidesPerView: 'auto',
@@ -91,58 +93,51 @@ var swiperLabel = new Swiper(".main-banner__bottom", {
     loop: true,
     centeredSlides: true,
 });
-// var swiperPreference = new Swiper(".preference-slider", {
-//     effect: "creative",
-//     creativeEffect: {
-//         prev: {
-//             shadow: true,
-//             translate: ["-20%", 0, -1],
-//         },
-//         next: {
-//             translate: ["100%", 0, 0],
-//         },
-//     },
-//     grabCursor: true,
-//     pagination: {
-//         el: ".swiper-pagination",
-//         type: "fraction",
-//     },
-//     // navigation: {
-//     //     nextEl: ".swiper-button-next",
-//     //     prevEl: ".swiper-button-prev",
-//     // },
-// });
+
+///////////////////////////////PREFERENCE SLIDER//////////////////////////
 let slidePreference = document.querySelectorAll('.preference-slide');
+
+function addF(el, arr) {
+    if (el.nextElementSibling) {
+        el.nextElementSibling.classList.add('active');
+
+    } else {
+        arr[0].classList.add('active');
+    }
+    el.classList.remove('active', 'move');
+
+}
+
+function indexAdd(targetEl, arr) {
+    if (targetEl.nextElementSibling) {
+        targetEl.nextElementSibling.style.zIndex = +targetEl.style.zIndex + 1
+    } else {
+        arr[0].style.zIndex = +arr[arr.length - 1].style.zIndex + 1
+    }
+}
+
+function animationAdd(targetEl) {
+    targetEl.classList.add('move');
+}
 
 for (let i = 0; i < slidePreference.length; i++) {
     slidePreference[slidePreference.length - (i + 1)].style.zIndex = i;
+}
 
-
-
-
-    slidePreference[i].addEventListener('click', function () {
-        this.classList.add('move');
+[...slidePreference].forEach(item => {
+    item.addEventListener('click', function () {
         const thisSlide = this;
 
-        if (slidePreference[i + 1]) {
-            slidePreference[i + 1].style.zIndex = +this.style.zIndex + 1
-        } else {
-            slidePreference[0].style.zIndex = +slidePreference[slidePreference.length - 1].style.zIndex + 1
-        }
-
-
-        function addF(el) {
-            if (slidePreference[i + 1]) {
-                slidePreference[i + 1].classList.add('active');
-                // slidePreference[i + 1].style.zIndex = +el.style.zIndex + 1
-            } else {
-                slidePreference[0].classList.add('active');
-                // slidePreference[0].style.zIndex = +slidePreference[slidePreference.length - 1].style.zIndex + 1
-            }
-            el.classList.remove('active', 'move');
-            console.log('+')
-        }
-
-        setTimeout(addF, 1000, thisSlide);
+        animationAdd(thisSlide);
+        indexAdd(thisSlide, slidePreference);
+        setTimeout(addF, 1000, thisSlide, slidePreference);
     })
-}
+})
+
+document.querySelector('.slider-button').addEventListener('click', function () {
+    let activeSlide = document.querySelector('.preference-slide.active');
+
+    animationAdd(activeSlide);
+    indexAdd(activeSlide, slidePreference)
+    setTimeout(addF, 1000, activeSlide, slidePreference);
+})
