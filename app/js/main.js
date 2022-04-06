@@ -113,30 +113,36 @@ var swiperLabel = new Swiper(".main-banner__bottom", {
 //     // },
 // });
 let slidePreference = document.querySelectorAll('.preference-slide');
-for (let i = 1; i <= slidePreference.length; i++) {
-    slidePreference[slidePreference.length - i].style.zIndex = i;
-}
 
-slidePreference.forEach(slide => {
+for (let i = 0; i < slidePreference.length; i++) {
+    slidePreference[slidePreference.length - (i + 1)].style.zIndex = i;
 
-    slide.addEventListener('click', function () {
-        console.log('click')
+
+
+
+    slidePreference[i].addEventListener('click', function () {
         this.classList.add('move');
         const thisSlide = this;
 
+        if (slidePreference[i + 1]) {
+            slidePreference[i + 1].style.zIndex = +this.style.zIndex + 1
+        } else {
+            slidePreference[0].style.zIndex = +slidePreference[slidePreference.length - 1].style.zIndex + 1
+        }
+
+
         function addF(el) {
-            if (el.nextElementSibling) {
-                el.nextElementSibling.classList.add('active');
-
+            if (slidePreference[i + 1]) {
+                slidePreference[i + 1].classList.add('active');
+                // slidePreference[i + 1].style.zIndex = +el.style.zIndex + 1
             } else {
-                el.closest('.preference-slider').firstElementChild.classList.add('active');
-
+                slidePreference[0].classList.add('active');
+                // slidePreference[0].style.zIndex = +slidePreference[slidePreference.length - 1].style.zIndex + 1
             }
             el.classList.remove('active', 'move');
-            el.style.zIndex = el.style.zIndex - (slidePreference.length - 1)
-
+            console.log('+')
         }
-        setTimeout(addF, 1000, thisSlide);
 
+        setTimeout(addF, 1000, thisSlide);
     })
-})
+}

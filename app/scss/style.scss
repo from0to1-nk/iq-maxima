@@ -623,6 +623,7 @@
         display: flex;
         padding-top: 80px;
         padding-bottom: 30px;
+        position: relative;
     }
 
     &__title {
@@ -644,7 +645,7 @@
     max-width: 913px;
     width: 100%;
     height: 282px;
-
+padding-right: 69px;
     &::after {
         content: '';
         position: absolute;
@@ -658,7 +659,15 @@
     }
 }
 
-.preference-slider {}
+.slider-button{
+    position: relative;
+    top: 50%;
+    right: -104%;
+    background: none;
+    img{width: 47px;
+    height: 20px;}
+    
+}
 
 @keyframes slideMove {
     0% {
@@ -699,6 +708,7 @@
         animation-duration: 1s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards;
+        z-index: 100!important;
     }
 
     &__inner {
