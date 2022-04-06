@@ -118,7 +118,7 @@ body {
     right: 0;
     top: 0px;
     overflow: hidden;
-
+ z-index: -1;
 }
 
 .parallax-layes {
@@ -127,6 +127,7 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
+   
 }
 
 .bunner__parallax {
@@ -139,4 +140,14 @@ body {
 }
 .slider__parallax{
     background-image: url('../images/wave.svg');   
+}
+.services__item-parallax{
+    background-image: url('../images/wave.svg'); 
+   left: auto!important;
+   right: -120px;
+   bottom: 60px;
+   top: auto!important;
+}
+.services__wrapper-parallax{
+    background-image: url('../images/round.svg');
 }
