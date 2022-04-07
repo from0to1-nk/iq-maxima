@@ -11,7 +11,8 @@ html {
 
 html,
 body {
-    position: relative;overflow-x: hidden;
+    position: relative;
+    overflow-x: hidden;
 }
 
 a {
@@ -95,6 +96,7 @@ body {
     background: #FFCB4A;
     box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.06);
 }
+
 #wrapper__parallax {
     position: relative;
 
@@ -118,7 +120,7 @@ body {
     right: 0;
     top: 0px;
     overflow: hidden;
- z-index: -1;
+    z-index: -1;
 }
 
 .parallax-layes {
@@ -127,7 +129,7 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
-   
+
 }
 
 .bunner__parallax {
@@ -138,16 +140,77 @@ body {
 .project__parallax {
     background-image: url('../images/project-wave.svg');
 }
-.slider__parallax{
-    background-image: url('../images/wave.svg');   
+
+.slider__parallax {
+    background-image: url('../images/wave.svg');
 }
-.services__item-parallax{
-    background-image: url('../images/wave.svg'); 
-   left: auto!important;
-   right: -120px;
-   bottom: 60px;
-   top: auto!important;
+
+.services__item-parallax {
+    background-image: url('../images/wave.svg');
+    left: auto !important;
+    right: -120px;
+    bottom: 60px;
+    top: auto !important;
 }
-.services__wrapper-parallax{
+
+.services__wrapper-parallax {
     background-image: url('../images/round.svg');
+}
+.technology__parallax{
+    background-image: url('../images/wave.svg');
+    left: -200px!important;
+}
+
+.blue-box {
+    background: linear-gradient(180deg, #176793 0%, #009EC9 100%);
+    min-height: 282px;
+    color: #fff;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 89%;
+        height: 50px;
+        background: #E4E6EA;
+        box-shadow: 0px 9px 31px rgba(0, 0, 0, 0.07);
+       bottom: -21px;
+       left: 34px;
+       right: 34px;
+        z-index: -100;
+      }
+    &__inner {
+        padding: 52px 31px 52px 57px;
+              position: relative;
+    }
+
+    &__suptitle {
+        color: rgba(210, 224, 233, 0.06);
+        font-size: 72px;
+        line-height: 76px;
+        left: 33px;
+        font-family: 'Montserrat-Black';
+        font-style: normal;
+        font-weight: 800;
+       margin-top: -50px;
+       margin-left: -50px;
+    }
+
+    &__title {
+        font-family: 'Montserrat-SemiBold';
+        font-style: normal;
+        font-weight: 600;
+        position: relative;
+        font-size: 26px;
+        line-height: 106%;
+        margin-bottom: 30px;
+        margin-top: -20px;
+    }
+
+    &__text {
+        font-family: 'Montserrat-Medium';
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        font-size: 16px;
+        line-height: 30px;
+    }
 }

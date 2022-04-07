@@ -799,6 +799,7 @@
     padding-right: calc((100% - 1718px) / 2);
     max-width: 1718px;
     padding-top: 100px;
+    padding-bottom: 190px;
 
     &__title {
         @include gradient;
@@ -914,5 +915,52 @@
         background-image: url('../images/arrow-top-right.svg');
         background-repeat: no-repeat;
         background-size: contain;
+    }
+}
+
+//////////////////////start technology////////
+
+.technology-box{
+    max-width: 721px;
+    margin-right: 40px;
+}
+.technology__inner {
+    position: relative;
+    display: flex;
+    align-items:center ;
+    padding-top: 45px;padding-bottom: 20px;
+}
+.technology__slider-wrapper{
+    padding-right: 79px;
+    width: 100%;
+    position: relative;
+}
+.technology__slider{
+    max-width: 600px;
+    width: 100%;
+    height: 282px;
+}
+.technology__slide {
+    &-inner {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(110px, 130px));
+        grid-template-rows:repeat(auto-fill,minmax(50px, max-content));
+        grid-column-gap: 20px;
+        grid-row-gap: 32px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-img{
+        text-align: center; font-size: 0;
+    }
+   
+}
+
+.slider-button.swiper-button-next{
+ position: absolute;
+ top: 50%;
+ right: 14px;
+    &::after{
+        display: none;
     }
 }

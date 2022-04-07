@@ -93,6 +93,13 @@ var swiperLabel = new Swiper(".main-banner__bottom", {
     loop: true,
     centeredSlides: true,
 });
+const technologySwiper = new Swiper('.technology__slider', {
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+
+    },
+});
 
 ///////////////////////////////PREFERENCE SLIDER//////////////////////////
 let slidePreference = document.querySelectorAll('.preference-slide');
