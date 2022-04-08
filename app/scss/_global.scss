@@ -58,6 +58,7 @@ body {
     min-width: 320px;
     color: #3D3D3D;
     font-family: 'Montserrat-Regular';
+    background-color:  #eeeeeea3;;
 }
 
 .container {
@@ -158,9 +159,13 @@ body {
 }
 .technology__parallax{
     background-image: url('../images/wave.svg');
-    left: -200px!important;
+  
+   background-position: 30%;
 }
-
+.main-rewievs__parallax{
+    background-image: url('../images/wave.svg');
+  background-position: right -150px;
+}
 .blue-box {
     background: linear-gradient(180deg, #176793 0%, #009EC9 100%);
     min-height: 282px;

@@ -95,10 +95,29 @@ var swiperLabel = new Swiper(".main-banner__bottom", {
 });
 const technologySwiper = new Swiper('.technology__slider', {
     slidesPerView: 1,
+    spaceBetween: 200,
     navigation: {
         nextEl: '.swiper-button-next',
 
     },
+});
+var reviewSwiper = new Swiper(".main-rewievs__slider", {
+    slidesPerView: 2,
+    spaceBetween: 40,
+    scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+    },
+
+});
+var reviewSwiper = new Swiper(".awards__slider", {
+    slidesPerView: 3,
+    spaceBetween: 0,
+    pagination: {
+        el: ".swiper-pagination",
+        clicable: true,
+    },
+
 });
 
 ///////////////////////////////PREFERENCE SLIDER//////////////////////////
