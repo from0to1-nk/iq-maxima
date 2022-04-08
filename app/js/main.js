@@ -93,16 +93,16 @@ var swiperLabel = new Swiper(".main-banner__bottom", {
     loop: true,
     centeredSlides: true,
 });
-const technologySwiper = new Swiper('.technology__slider', {
-    slidesPerView: 1,
-    spaceBetween: 200,
-    navigation: {
-        nextEl: '.swiper-button-next',
+// const technologySwiper = new Swiper('.technology__slider', {
+//     slidesPerView: 1,
+//     spaceBetween: 200,
+//     navigation: {
+//         nextEl: '.swiper-button-next',
 
-    },
-});
+//     },
+// });
 var reviewSwiper = new Swiper(".main-rewievs__slider", {
-    slidesPerView: 2,
+    slidesPerView: 1.7,
     spaceBetween: 40,
     scrollbar: {
         el: ".swiper-scrollbar",
@@ -146,9 +146,14 @@ function animationAdd(targetEl) {
     targetEl.classList.add('move');
 }
 
-for (let i = 0; i < slidePreference.length; i++) {
-    slidePreference[slidePreference.length - (i + 1)].style.zIndex = i;
+function addIndex(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[arr.length - (i + 1)].style.zIndex = i;
+    }
+
 }
+
+addIndex(slidePreference);
 
 [...slidePreference].forEach(item => {
     item.addEventListener('click', function () {
@@ -160,10 +165,71 @@ for (let i = 0; i < slidePreference.length; i++) {
     })
 })
 
-document.querySelector('.slider-button').addEventListener('click', function () {
+document.querySelector('.preference-slider__btn').addEventListener('click', function () {
     let activeSlide = document.querySelector('.preference-slide.active');
 
     animationAdd(activeSlide);
     indexAdd(activeSlide, slidePreference)
     setTimeout(addF, 1000, activeSlide, slidePreference);
+})
+///////////////////////////////technology SLIDER//////////////////////////
+
+let slideTec = document.querySelectorAll('.technology__slide');
+
+addIndex(slideTec);
+[...slideTec].forEach(item => {
+    item.addEventListener('click', function () {
+
+        console.log(this)
+        animationAdd(this);
+        indexAdd(this, slideTec);
+        setTimeout(addF, 300, this, slideTec);
+    })
+})
+document.querySelector('.technology__slider-button').addEventListener('click', function () {
+    let activeSlide = document.querySelector('.technology__slide.active');
+
+    animationAdd(activeSlide);
+    indexAdd(activeSlide, slideTec)
+    setTimeout(addF, 1000, activeSlide, slideTec);
+})
+/////////////sticky/////////////////////////
+// window.addEventListener('scroll', animOnScroll)
+// $(window).on('scroll', function () {
+//     if ($(window).scrollTop() > 5) {
+//         $('.main-slider__wrapper').addClass('toTop');
+//         $('.main-slider__images').addClass('toTop');
+//         $('.order').addClass('toTop');
+//     } else {
+
+//     }
+// })
+
+function offset(el) {
+    var rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return {
+        top: rect.top + scrollTop,
+        left: rect.left + scrollLeft
+    }
+}
+
+
+const navLeft = document.querySelector('.page-nav');
+
+
+window.addEventListener('scroll', () => {
+    const navOffset = Math.round(offset(navLeft).top);
+    let scroll = Math.round(window.scrollY);
+    let top = navOffset - scroll;
+    console.log(top);
+
+    if (top < 100) {
+        navLeft.classList.add('fixed')
+
+    } else {
+        navLeft.classList.remove('fixed')
+    }
+
 })
