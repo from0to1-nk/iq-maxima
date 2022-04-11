@@ -53,6 +53,7 @@ function images() {
 
 function scripts() {
     return src([
+            'app/js/just-validate.min.js',
             'node_modules/swiper/swiper-bundle.min.js',
             'node_modules/parallax-js/dist/parallax.min.js',
             'app/js/main.js'

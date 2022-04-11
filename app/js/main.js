@@ -1,39 +1,3 @@
-// function removeClass() {
-//     modificate = document.querySelectorAll('.js-mini');
-//     modificate.forEach(element => {
-//         element.classList.remove('js-mini');
-//     });
-
-// }
-
-// function addClass() {
-//     let prevSlide = document.querySelector('.main-banner__slide.swiper-slide-prev');
-//     let nextSlide = document.querySelector('.main-banner__slide.swiper-slide-next');
-//     let firstSlide = prevSlide.previousElementSibling;
-//     let lastSlide = nextSlide.nextElementSibling.nextElementSibling.nextElementSibling;
-//     let lastlast = lastSlide.nextElementSibling
-
-//     firstSlide.classList.add('js-mini');
-//     console.log(lastlast)
-//     lastSlide.classList.add('js-mini')
-// }
-
-// function animate() {
-//     slides = document.querySelectorAll('.main-banner__slide');
-//     slides.forEach(element => {
-//         element.classList.add('js-animate');
-//     });
-
-// }
-
-// bunnerSwiper.on('slideChange', function () {
-//     removeClass()
-//     addClass()
-//     animate()
-
-
-// });
-
 //////////////////////BUNNER SLIDER /////////////////////////////////
 
 const swiper = new Swiper('.main-banner__slider', {
@@ -62,6 +26,7 @@ const swiper = new Swiper('.main-banner__slider', {
     },
     slideToClickedSlide: true,
     loopPreventsSlide: true,
+
 });
 
 
@@ -93,31 +58,37 @@ var swiperLabel = new Swiper(".main-banner__bottom", {
     loop: true,
     centeredSlides: true,
 });
-// const technologySwiper = new Swiper('.technology__slider', {
-//     slidesPerView: 1,
-//     spaceBetween: 200,
-//     navigation: {
-//         nextEl: '.swiper-button-next',
 
-//     },
-// });
 var reviewSwiper = new Swiper(".main-rewievs__slider", {
-    slidesPerView: 1.7,
+    slidesPerView: 1,
     spaceBetween: 40,
     scrollbar: {
         el: ".swiper-scrollbar",
         draggable: true,
     },
-
+    breakpoints: {
+        // when window width is >= 
+        800: {
+            slidesPerView: 1.7
+        }
+    },
 });
 var reviewSwiper = new Swiper(".awards__slider", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 0,
     pagination: {
         el: ".swiper-pagination",
         clicable: true,
     },
-
+    breakpoints: {
+        // when window width is >= 
+        1100: {
+            slidesPerView: 3
+        },
+        500: {
+            slidesPerView: 2
+        }
+    },
 });
 
 ///////////////////////////////PREFERENCE SLIDER//////////////////////////
@@ -195,6 +166,13 @@ document.querySelector('.technology__slider-button').addEventListener('click', f
 })
 /////////////sticky/////////////////////////
 
+const boxInNav = document.querySelector('.js-menu-fixed');
+const boxToTop = offset(boxInNav).top;
+const nav = document.querySelector('.page-nav');
+const navContainer = document.querySelector('.preference');
+
+
+
 function offset(el) {
     var rect = el.getBoundingClientRect(),
         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
@@ -205,20 +183,9 @@ function offset(el) {
     }
 }
 
-const boxInNav = document.querySelector('.js-menu-fixed');
-const boxToTop = offset(boxInNav).top;
-const boxEnd = document.querySelector('.js-stop-fixed');
-const boxToEnd = offset(boxEnd).top;
-const nav = document.querySelector('.page-nav');
-const navContainer = document.querySelector('.preference');
-const heightWindow = document.documentElement.clientHeight;
-
-
-function fixedNav() {
-    const scroll = Math.round(window.scrollY);
-
-    t = boxToTop - scroll
-    if (t <= 50) {
+function fixedNav(scroll) {
+    let distanse = boxToTop - scroll
+    if (distanse <= 150) {
         nav.classList.add('fixed');
         navContainer.classList.add('page-nav--empty')
     } else {
@@ -227,19 +194,20 @@ function fixedNav() {
     }
 }
 
+function fixedStop(scroll) {
+    const heightWindow = document.documentElement.clientHeight;
+    const boxEnd = document.querySelector('.js-stop-fixed');
+    const boxToEnd = offset(boxEnd).top;
 
-function fixedStop() {
-    const scroll = Math.round(window.scrollY);
-    t = heightWindow / 2 + scroll;
+    let distanseStop = heightWindow / 2 + scroll;
     if (nav.classList.contains('fixed')) {
-        if (t >= boxToEnd) {
+        if (distanseStop >= boxToEnd) {
             nav.classList.remove('fixed');
             navContainer.classList.remove('page-nav--empty')
         }
     }
 }
 
-fixedNav()
 
 
 
@@ -250,15 +218,11 @@ let pageSections = document.querySelectorAll('.js-scroll-sections'),
     header = document.querySelector('.header'),
     headerHeight = header.getBoundingClientRect().height;
 
-console.log(headerHeight)
 
-
-function animateNavItem(sections, link) {
+function animateNavItem(sections, link, scroll) {
     sections.forEach(item => {
         let topSections = offset(item).top;
-        const scroll = Math.round(window.scrollY);
-
-        if (scroll >= topSections - 50) {
+        if (scroll >= topSections - 150) {
             link.forEach(link => {
                 let href = link.getAttribute('href');
                 let id = item.getAttribute('id')
@@ -273,28 +237,85 @@ function animateNavItem(sections, link) {
     })
 }
 
-
 animateNavItem(pageSections, pageLink)
 
 
 window.addEventListener('scroll', () => {
-    fixedHeader(header)
-    fixedNav()
-    fixedStop()
-    animateNavItem(pageSections, pageLink)
+    const scroll = Math.round(window.scrollY);
+
+    fixedHeader(header, scroll)
+    fixedNav(scroll)
+    fixedStop(scroll)
+    animateNavItem(pageSections, pageLink, scroll)
 })
 
 document.querySelectorAll('.page-nav__list-item').forEach(item => {
     item.addEventListener('click', animateNavItem(pageSections, pageLink))
 })
 ///////////////////////////////header fixed///////////////
-function fixedHeader(header) {
-    const scroll = Math.round(window.scrollY);
+function fixedHeader(header, scroll) {
     if (scroll > 10) {
         header.classList.add('fixed');
-        document.querySelector('body').style.paddingTop = headerHeight;
+        document.querySelector('.body').style.paddingTop = `${headerHeight}px`;
     } else {
         header.classList.remove('fixed');
-        document.querySelector('body').style.paddingTop = 0;
+        document.querySelector('.body').style.paddingTop = 0;
     }
 }
+////////////////////////////плавный скролл//////////////////
+function scrollToTop(elTop) {
+    window.scrollTo({
+        elTop,
+        behavior: 'smooth'
+    });
+}
+
+document.querySelectorAll('.page-nav__list-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        let id = this.getAttribute('href');
+        let top = +offset(document.querySelector(id)).top - 100;
+        window.scrollTo({
+            top,
+            behavior: 'smooth'
+        });
+        console.log('click')
+    })
+})
+////////////////////////////animated menu//////////////////
+document.querySelector('.burger__menu').addEventListener('click', function () {
+    this.classList.toggle('opened');
+    document.querySelector('.header__menu').classList.toggle('open');
+})
+document.querySelector('.header__drop-down').addEventListener('click', function () {
+    this.classList.toggle('opened');
+    document.querySelector('.drop-down__menu').classList.toggle('opened');
+})
+/////////validate
+
+
+
+new JustValidate('.connect__form', {
+    rules: {
+        address: {
+            required: true,
+            minLength: 2,
+        },
+        tel: {
+            required: true,
+            minLength: 5,
+        },
+
+    },
+    messages: {
+        address: {
+            required: 'Введите адрес Вашего сайта',
+            minLength: 'Поле должно содержать минимум 2 символа'
+        },
+        tel: {
+            required: 'Укажите ваш телефон',
+            minLength: 'Поле должно содержать минимум 5 символов'
+        },
+    },
+    colorWrong: '#7943A4'
+});
