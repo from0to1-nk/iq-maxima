@@ -10,38 +10,58 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
+<body class="body">
     <div id="wrapper__parallax">
         <header class="header">
             <div class="container">
                 <div class="header__inner">
                     <a class="logo" href="#"><img src="images/logo_blue.svg" alt="LOGO"></a>
+                    <button class="burger__menu">
+                        <span class="bar-top"></span>
+                        <span class="bar-mid"></span>
+                        <span class="bar-bot"></span>
+                    </button>
                     <nav class="header__menu">
                         <ul class="header__menu-list">
                             <li class="header__menu-item header__drop-down">
-                                <a href="#">Услуги</a>
+                                <a class="header__menu-link" href="#">Услуги</a> <button class="drop-down__btn"
+                                    type="button"><img src="images/header-arr.png" alt=""></button>
+                                <ul class="drop-down__menu">
+                                    <li class="drop-down__item">
+                                        <a href="#" class="drop-down__link">Медийная реклама</a>
+                                    </li>
+                                    <li class="drop-down__item">
+                                        <a href="#" class="drop-down__link">Медийная реклама</a>
+                                    </li>
+                                    <li class="drop-down__item">
+                                        <a href="#" class="drop-down__link">Медийная реклама</a>
+                                    </li>
+                                    <li class="drop-down__item">
+                                        <a href="#" class="drop-down__link">Медийная реклама</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="header__menu-item">
-                                <a href="#">О нас</a>
+                                <a class="header__menu-link" href="#">О нас</a>
                             </li>
                             <li class="header__menu-item">
-                                <a href="#">Кейсы</a>
+                                <a class="header__menu-link" href="#">Кейсы</a>
                             </li>
                             <li class="header__menu-item">
-                                <a href="#">Карьера</a>
+                                <a class="header__menu-link" href="#">Карьера</a>
                             </li>
                             <li class="header__menu-item">
-                                <a href="#">Блог</a>
+                                <a class="header__menu-link" href="#">Блог</a>
                             </li>
                             <li class="header__menu-item">
-                                <a href="#">Контакты</a>
+                                <a class="header__menu-link" href="#">Контакты</a>
                             </li>
                         </ul>
                     </nav>
                     <div class="header__communications">
                         <a class="header__communications-link" href="tel:+78002001376">8 (800) 200-13-73</a>
                         <a class="header__communications-link" href="tel:+74752282800">8 (475) 228-28-00</a>
-                        <button class="header__communications-btn button-gradient js-modal-button"
+                        <button class="header__communications-btn button-gradient js-modal-button js-animated-button"
                             type="button">Заказать
                             звонок</button>
                     </div>
@@ -65,7 +85,7 @@
                             </div>
                             <p class="main-bunner__text"></p>
                             <div class="main-bunner__btn-box">
-                                <button class="yellow-btn main-bunner__btn" type="button">Получить
+                                <button class="yellow-btn main-bunner__btn js-animated-button" type="button">Получить
                                     консультацию</button>
                                 <a class="main-bunner__more" href="#">Посмотреть портфолио</a></div>
                         </div>
@@ -125,19 +145,19 @@
                 <div class="main-banner__bottom">
                     <div class="swiper-wrapper">
                         <a class="swiper-slide">
-                            <img src="images/rio.png" />
+                            <img src="images/rio.png" alt="images" />
                         </a>
                         <a class="swiper-slide">
-                            <img src="images/optima.png" />
+                            <img src="images/optima.png" alt="images" />
                         </a>
                         <a class="swiper-slide">
-                            <img src="images/mettem.png" />
+                            <img src="images/mettem.png" alt="images" />
                         </a>
                         <a class="swiper-slide">
-                            <img src="images/optima.png" />
+                            <img src="images/optima.png" alt="images" />
                         </a>
                         <a class="swiper-slide">
-                            <img src="images/familyRoom.png" />
+                            <img src="images/familyRoom.png" alt="images" />
                         </a>
                     </div>
                 </div>
@@ -436,137 +456,7 @@
                         </div>
 
                     </div>
-                    <!-- <div class="technology__slider-wrapper">
-                        <div class="technology__slider swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide technology__slide">
-                                    <div class="technology__slide-inner">
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-1.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-2.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-3.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-4.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-5.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-6.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-1.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-2.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-3.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-4.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-5.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-6.png" alt="images">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide technology__slide">
-                                    <div class="technology__slide-inner">
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-1.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-2.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-3.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-4.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-5.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-6.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-1.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-2.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-3.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-4.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-5.png" alt="tecnology-img">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-6.png" alt="tecnology-img">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide technology__slide">
-                                    <div class="technology__slide-inner">
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-1.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-2.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-3.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-4.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-5.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-6.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-1.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-2.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-3.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-4.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-5.png" alt="images">
-                                        </div>
-                                        <div class='technology__slide-img'>
-                                            <img src="images/tec-6.png" alt="images">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="slider-button swiper-button-next">
-                            <img src="images/arrow-red.svg" alt="arrow">
-                        </div>
-
-                    </div> -->
 
                     <div class="technology__slider-wrapper">
                         <div class="technology__slider">
@@ -692,9 +582,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="slider-button technology__slider-button">
+                        <button type="button" class="slider-button technology__slider-button">
                             <img src="images/arrow-red.svg" alt="arrow">
-                        </div>
+                        </button>
                     </div>
 
 
@@ -771,9 +661,11 @@
                         <div class="connect__form-inner">
                             <div class="connect__form-title">Оставьте заявку и мы свяжемся с Вами в течение 30
                                 минут.</div>
-                            <input type="text" class="connect__form-input" placeholder="Адрес Вашего сайта">
-                            <input type="text" class="connect__form-input" placeholder="Телефон">
-                            <button class="connect__form-button yellow-btn " type="submit">Отправить
+                            <input type="text" class="connect__form-input" data-validate-field="address"
+                                placeholder="Адрес Вашего сайта">
+                            <input type="text" class="connect__form-input" data-validate-field="tel"
+                                placeholder="Телефон">
+                            <button class="connect__form-button yellow-btn js-animated-button" type="submit">Отправить
                                 заявку</button>
                             <div class="connect__form-text">Нажимая “отправить заявку” вы соглашаетесь с
                                 политикой
@@ -825,7 +717,8 @@
                                             вы выполняете на отлично.»</p>
                                         <p class="main-rewievs__slide-text main-rewievs__slide-text--right">
                                             Вартанян А.С., генеральный директор</p>
-                                        <a class="main-rewievs__slide-button" href="#">Подробнее о проекте</a>
+                                        <a class="main-rewievs__slide-button js-animated-button" href="#">Подробнее о
+                                            проекте</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide main-rewievs__slide">
@@ -852,7 +745,8 @@
                                             вы выполняете на отлично.»</p>
                                         <p class="main-rewievs__slide-text main-rewievs__slide-text--right">
                                             Вартанян А.С., генеральный директор</p>
-                                        <a class="main-rewievs__slide-button" href="#">Подробнее о проекте</a>
+                                        <a class="main-rewievs__slide-button js-animated-button" href="#">Подробнее о
+                                            проекте</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide main-rewievs__slide">
@@ -879,7 +773,8 @@
                                             вы выполняете на отлично.»</p>
                                         <p class="main-rewievs__slide-text main-rewievs__slide-text--right">
                                             Вартанян А.С., генеральный директор</p>
-                                        <a class="main-rewievs__slide-button" href="#">Подробнее о проекте</a>
+                                        <a class="main-rewievs__slide-button js-animated-button" href="#">Подробнее о
+                                            проекте</a>
                                     </div>
                                 </div>
                             </div>
@@ -1147,4 +1042,4 @@
     <script src="js/main.min.js"></script>
 </body>
 
-</html
+</html>

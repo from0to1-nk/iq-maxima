@@ -58,7 +58,8 @@ body {
     min-width: 320px;
     color: #3D3D3D;
     font-family: 'Montserrat-Regular';
-    background-color:  #eeeeeea3;;
+    background-color: #eeeeeea3;
+    ;
 }
 
 .container {
@@ -75,22 +76,36 @@ body {
     line-height: 52px;
 }
 
-.button-gradient {
-    position: relative;
-    text-align: center;
+// .button-gradient {
+//     position: relative;
+//     text-align: center;
 
-    &::before {
-        position: absolute;
-        content: '';
-        background-image: url('../images/border.svg');
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: -6px;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+//     &::before {
+//         position: absolute;
+//         content: '';
+//         background-image: url('../images/border.svg');
+//         left: 0;
+//         top: 0;
+//         bottom: 0;
+//         right: -6px;
+//         background-repeat: no-repeat;
+//         background-size: cover;
+//     }
+// }
+
+.button-gradient {
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #176793 0%, #009EC9 100%);
+    border-image-slice: 1;
+    transition: background .4s;
 }
+
+.button-gradient:hover {
+    background: linear-gradient(180deg, #176793 0%, #009EC9 100%);
+    color: #fff;
+    -webkit-text-fill-color: #fff
+}
+
 
 .yellow-btn {
     padding: 20px 25px;
@@ -157,20 +172,24 @@ body {
 .services__wrapper-parallax {
     background-image: url('../images/round.svg');
 }
-.technology__parallax{
+
+.technology__parallax {
     background-image: url('../images/wave.svg');
-  
-   background-position: 30%;
+
+    background-position: 30%;
 }
-.main-rewievs__parallax{
+
+.main-rewievs__parallax {
     background-image: url('../images/wave.svg');
-  background-position: right -150px;
+    background-position: right -150px;
 }
+
 .blue-box {
     background: linear-gradient(180deg, #176793 0%, #009EC9 100%);
     min-height: 282px;
     color: #fff;
     position: relative;
+
     &::after {
         content: '';
         position: absolute;
@@ -178,14 +197,15 @@ body {
         height: 50px;
         background: #E4E6EA;
         box-shadow: 0px 9px 31px rgba(0, 0, 0, 0.07);
-       bottom: -21px;
-       left: 34px;
-       right: 34px;
+        bottom: -21px;
+        left: 34px;
+        right: 34px;
         z-index: -100;
-      }
+    }
+
     &__inner {
         padding: 52px 31px 52px 57px;
-              position: relative;
+        position: relative;
     }
 
     &__suptitle {
@@ -196,8 +216,8 @@ body {
         font-family: 'Montserrat-Black';
         font-style: normal;
         font-weight: 800;
-       margin-top: -50px;
-       margin-left: -50px;
+        margin-top: -50px;
+        margin-left: -50px;
     }
 
     &__title {
