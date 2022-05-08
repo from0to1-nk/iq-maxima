@@ -59,7 +59,7 @@ body {
     color: #3D3D3D;
     font-family: 'Montserrat-Regular';
     background-color: #eeeeeea3;
-    ;
+    
 }
 
 .container {
@@ -160,7 +160,18 @@ body {
 .slider__parallax {
     background-image: url('../images/wave.svg');
 }
-
+.seo-calc__parallax {
+    background-image: url('../images/wave.svg');
+    background-position: left;
+}
+.connect__parallax {
+    background-image: url('../images/wave.svg');
+  background-position: left;
+  left: 340px !important;
+  top:50px !important;
+  background-size: 400px;
+  z-index: -200;
+}
 .services__item-parallax {
     background-image: url('../images/wave.svg');
     left: auto !important;

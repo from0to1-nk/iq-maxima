@@ -68,6 +68,16 @@
         justify-content: center;
         align-items: center;
     }
+
+    &-link {
+        transition: color, .5s;
+    }
+
+    &-item:hover {
+        .header__menu-link {
+            color: #007aff;
+        }
+    }
 }
 
 .logo {
@@ -94,7 +104,6 @@
         line-height: 19px;
         letter-spacing: 0.025em;
         font-style: normal;
-
         padding: 13px 23px;
         display: inline-block;
         margin-left: 20px;
@@ -337,7 +346,7 @@
 }
 
 .page-content {
-    max-width: calc(1774px + ((100% - 1718px) / 2));
+    max-width: calc(1818px + ((100% - 1718px) / 2));
     //1774 = 1718 (container)+padding выступающий "за контейер"
     padding-left: calc((100% - 1718px) / 2);
 }
@@ -641,7 +650,8 @@
 
 //////////////srart services///////////
 .services {
-    padding-right: calc((100% - 1718px) / 2);
+    // padding-right: 56px;
+    padding-right: 100px;
     max-width: 1718px;
     padding-top: 100px;
     padding-bottom: 190px;
@@ -659,12 +669,15 @@
     }
 
     &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
         margin-bottom: -76px;
-        margin-right: 016;
+        grid-column-gap: 50px;
+        justify-content: space-between;
         position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(610px, 1fr));
     }
 }
 
@@ -687,7 +700,7 @@
 
 .services__item {
     background: #ECEFF3;
-    backdrop-filter: blur(6px);
+    //backdrop-filter: blur(6px);
     padding-bottom: 20px;
     padding-left: 80px;
     padding-right: 25px;
@@ -751,7 +764,7 @@
         padding-right: 30px;
         position: relative;
         margin-top: 34px;
-        transform: translateX(110px);
+        transform: translateX(108px);
         transition: color .3s;
     }
 
@@ -832,17 +845,15 @@
 .connect {
     padding-top: 260px;
     padding-left: 25px;
-
     position: relative;
 
     &__inner {
         display: flex;
         min-height: 296px;
         position: relative;
-        background: linear-gradient(98.7deg, #14719A 1.48%, #03A9C4 79.16%);
-        box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.13);
         padding-right: 88px;
         padding-bottom: 25px;
+
     }
 
     &__inner::before {
@@ -851,7 +862,6 @@
         width: 97.5%;
         height: 50px;
         background: #E4E6EA;
-        box-shadow: 0px 9px 31px rgba(0, 0, 0, 0.07);
         top: -20px;
         left: 34px;
         right: 0;
@@ -861,11 +871,14 @@
     &__inner::after {
         content: '';
         position: absolute;
-        left: 100%;
+        left: 0;
         top: 0;
         bottom: 0;
-        width: 110000000%;
-        background-color: #03A9C4;
+        max-width: 2000px;
+        width: 100000000%;
+        background: linear-gradient(98.7deg, #14719A 1.48%, #03A9C4 79.16%);
+        box-shadow: 0px 9px 31px rgba(0, 0, 0, 0.07);
+        z-index: -1;
     }
 
     &__content {
@@ -1490,6 +1503,7 @@
 .page-nav--empty {
     padding-left: 375px;
     display: block;
+    min-width: 100%;
 }
 
 section {
@@ -1645,7 +1659,7 @@ section {
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.03);
     height: 0;
     max-height: 0px;
-    transition: max-height .5s ease-in;
+    transition: max-height .3s ease-in;
     overflow: hidden;
 }
 
@@ -1695,6 +1709,648 @@ section {
     }
 }
 
+///////////////////seo-banner///////////////
+
+.seo-banner {
+    color: #FFFFFF;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    text-align: center;
+    background-image: url('../images/seo-bunner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: drop-shadow(0px 4px 49px rgba(0, 0, 0, 0.25));
+
+    &__title {
+        font-family: 'Montserrat-SemiBold';
+        font-weight: 600;
+        font-size: 64px;
+        line-height: 80px;
+        margin-bottom: 20px;
+    }
+
+    &__subtitle {
+        padding-top: 42px;
+        font-family: 'Montserrat-Black';
+        font-weight: 800;
+        font-size: 96px;
+        color: rgba(210, 224, 233, 0.08);
+        line-height: 96px;
+    }
+
+    &__text {
+        font-family: 'Montserrat-Medium';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        max-width: 1090px;
+        margin: 0 auto;
+    }
+}
+
+.header.page-header {
+    background: rgba(251, 251, 251, 0.85);
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+//////////////////seo-price/////////////////
+// .seo-price.services  {
+//     padding-bottom: 0;
+// }
+.seo-connect {
+    padding-top: 140px;
+    padding-bottom: 20px;
+}
+
+.seo-connect__inner::after {
+    // background:rgba(23, 103, 147, 0.93);
+    background-image: url(../images/seo-form-bg-2.jpg);
+    // background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.seo-pice__text {
+    font-family: 'Montserrat-Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.services__item-text {
+    p+p {
+        padding-top: 15px;
+    }
+}
+
+.connect__content-title span {
+    display: inline-block;
+    color: #FFCB4A;
+    font-size: 40px;
+    line-height: 48px;
+    font-family: 'Montserrat-Bold';
+    font-style: normal;
+    font-weight: 700;
+    padding: 3px 24px;
+    border: 3px solid #FFFFFF;
+    border-radius: 60px;
+    margin-right: 14px;
+}
+
+.seo-about {
+    padding-top: 130px;
+}
+
+.seo-about__content {
+    // padding-right: 56px;
+    padding-right: 100px;
+}
+
+.seo-about__title {
+    margin-bottom: 30px;
+    @include gradient;
+}
+
+.seo-about__text {
+    margin-bottom: 65px;
+    font-family: 'Montserrat-Medium';
+    font-size: 18px;
+    line-height: 31px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.seo-about__text p+p {
+    padding-top: 40px;
+}
+
+.seo-connect__content {
+    padding-top: 55px;
+    padding-bottom: 20px;
+}
+
+.seo-about__content-wrapper {
+    margin-bottom: 160px;
+}
+
+.seo-about__imageBox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 29px;
+    margin-bottom: 46px;
+}
+
+.seo-about__note {
+    font-size: 18px;
+    line-height: 31px;
+    color: #C0C0C0;
+    font-family: 'Montserrat-Medium';
+}
+
+.imageBox__item {
+    height: 460px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+}
+
+.add__title {
+    font-family: 'Montserrat-Medium';
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 30px;
+    padding-top: 40px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background: #3D3D3D;
+        width: 97px;
+        height: 2px;
+        left: 0;
+        top: 0;
+    }
+}
+
+.add__text {
+    font-family: 'Montserrat-SemiBold';
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 38px;
+    margin-bottom: 65px;
+}
+
+.seo-about__add {
+    padding-right: 100px;
+}
+
+
+
+.seo-calc__inner {
+    position: relative;
+    display: flex;
+    padding-right: 100px;
+    align-items: center;
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100000px;
+        height: 100%;
+        background: #E4E6EA;
+        z-index: -1;
+    }
+}
+
+.seo-calc__form-wrapper {
+    padding-top: 36px;
+    padding-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    margin-top: -53px;
+    margin-bottom: -29px;
+}
+
+.seo-calc__content {
+    max-width: 520px;
+    padding-left: 45px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.seo-calc__title {
+    @include gradient;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 41px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat-SemiBold';
+}
+
+.seo-calc__text {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.seo-calc__form {
+    background: #038BB5;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.13);
+    text-align: center;
+    padding: 0 48px 40px;
+
+    height: 100%;
+}
+
+.seo-include {
+    padding-top: 170px;
+    padding-bottom: 100px;
+}
+
+.seo-calc__form-title {
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 76px;
+    color: rgba(210, 224, 233, 0.06);
+    font-family: 'Montserrat-Black';
+}
+
+.seo-calc__form-text {
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: 'Montserrat-SemiBold';
+    margin-top: -33px;
+   
+}
+
+.seo-calc__form-selectBox {
+    display: flex;
+  justify-content: center;
+   
+}
+
+.seo-calc__form-btn {
+    font-family: 'Montserrat-SemiBold';
+    background: #FFCB4A;
+    padding: 0 30px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 46px;
+    letter-spacing: 0.025em;
+    margin-bottom: 20px;
+}
+
+.seo-calc__form-link {
+    color: rgba(255, 255, 255, 0.64);
+    text-decoration-line: underline;
+    font-size: 16px;
+    line-height: 26px;
+    display: block
+}
+
+.seo-include__inner {
+    padding-right: 100px;
+}
+
+.seo-include__title {
+    @include gradient;
+    margin-bottom: 60px;
+
+}
+
+.seo-include__button {
+    background: #F2F2F2;
+    padding: 15px 50px 15px 30px;
+    color: #3D3D3D;
+    font-size: 18px;
+    line-height: 26px;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+    transition: all, .5s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url('../images/arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 17px;
+        height: 7px;
+        right: 20px;
+        top: 50%;
+    }
+
+    &:hover {
+        background: #ddd;
+    }
+
+
+    &.active {
+        background: linear-gradient(180deg, #176793 0%, #0492BE 100%);
+        color: #fff;
+    }
+
+    &.active::before {
+        background-image: url('../images/active-arrow.svg');
+    }
+}
+
+.seo-include__content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 0px 30px;
+    max-height: 0;
+    transition: max-height, .5s;
+    overflow: hidden;
+
+    &.open {
+        padding: 25px 30px;
+        max-height: 1000px;
+    }
+}
+
+.seo-preference {
+    &__inner {
+        padding: 100px 0;
+        position: relative;
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        margin-right: -30px;
+        margin-left: -30px;
+    }
+
+    &__inner::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 10000%;
+        left: 165px;
+        top: 0;
+        bottom: 0;
+        background: #ECEFF3;
+        z-index: -1;
+    }
+
+    &__inner::before {
+        content: '';
+        position: absolute;
+        background-image: url('../images/dots.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 214px;
+        height: 84px;
+        left: 110px;
+        top: -34px;
+    }
+}
+
+.seo-preference__item {
+    text-align: center;
+    background: #FFFFFF;
+    padding: 39px 15px 29px;
+    margin: 15px 30px;
+    width: 259px;
+    min-height: 259px;
+
+    &-title {
+        font-weight: 600;
+        font-family: 'Montserrat-SemiBold';
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 10px;
+        color: #263959;
+    }
+
+    &-text {
+        font-size: 16px;
+        line-height: 22px;
+        color: rgba(38, 57, 89, 0.65);
+    }
+
+    &-img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        margin-bottom: 20px;
+    }
+}
+
+.seo-preference__item:first-child {
+    width: 417px;
+}
+
+.seo-preference__item--last {
+    background: linear-gradient(180deg, #176793 0%, #009EC9 100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 43px;
+
+
+    .seo-preference__text {
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        font-family: 'Montserrat-Medium';
+
+        span {
+            font-size: 31px;
+            line-height: 37px;
+            font-family: 'Montserrat-SemiBold';
+            margin-right: 9px;
+        }
+    }
+}
+
+.seo-preference__link {
+    display: block;
+    margin-top: 15px;
+}
+
+.seo-preference__title-item {
+    max-width: 417px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 38px;
+}
+
+.seo-preference__title {
+    font-size: 48px;
+    line-height: 57px;
+    @include gradient;
+    margin-bottom: 30px;
+    font-family: 'Montserrat-Bold';
+    font-style: normal;
+    font-weight: 700;
+}
+
+.seo-preference__text {
+    color: rgba(38, 57, 89, 0.65);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: 'Montserrat-Medium';
+}
+
+//////////////////////////////////////////////////////////
+
+
+// Both native and custom selects must have the same width/height.
+.selectNative,
+.selectCustom {
+    position: relative;
+    width: 320px;
+    height: 46px;
+}
+
+// Make sure the custom select does not mess with the layout
+.selectCustom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+// This media query detects devices where the primary
+// input mechanism can hover over elements. (e.g. computers with a mouse)
+@media (hover: hover) {
+
+    // Since we are using a mouse, it's safe to show the custom select.
+    .selectCustom {
+        display: block;
+    }
+
+    // In a computer using keyboard? Then let's hide back the custom select
+    // while the native one is focused:
+    .selectNative:focus+.selectCustom {
+        display: none;
+    }
+}
+
+/* Add the focus states too, They matter, always! */
+.selectNative:focus,
+.selectCustom.isActive .selectCustom-trigger {
+    outline: none;
+    // box-shadow: white 0 0 0 0.2rem, #ff821f 0 0 0 0.4rem;
+}
+
+//
+// Rest of the styles to create the custom select.
+// Just make sure the native and the custom have a similar "box" (the trigger).
+//
+
+.select {
+    position: relative;
+}
+
+.selectLabel {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.selectWrapper {
+    position: relative;
+}
+
+.selectNative,
+.selectCustom-trigger {
+    font-size: 14px;
+    line-height: 30px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Montserrat-Regular';
+    background: rgba(255, 255, 255, 0.17);
+    border: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+.card+.card {
+    margin-left: 16px;
+}
+.card{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.selectNative {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    //background-image: url("../images/i.svg");
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 15px;
+    padding: 0rem 0.8rem;
+    color: transparent;
+}
+
+.selectCustom-trigger {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    //background-color: #fff;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.selectCustom-trigger::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/i.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.selectCustom-trigger:hover {
+    border-color: #8c00ff;
+}
+
+.selectCustom-options {
+    position: absolute;
+    // top: calc(3.8rem + 0.8rem);
+    left: 0;
+    top: 100%;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(45, 159, 193, 0.95);
+    box-shadow: none;
+    z-index: 1;
+    //padding: 20px 10px;
+    color: #fff;
+    display: none;
+}
+
+.selectCustom.isActive .selectCustom-options {
+    display: block;
+}
+
+.selectCustom-option {
+    position: relative;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.selectCustom-option.isHover,
+.selectCustom-option:hover {
+    background-color: #038BB5; // contrast AA
+    color: white;
+    cursor: default;
+}
+
+//////////////////////////////////////////
+
+
+#seo-form {
+    margin-bottom: 100px;
+}
 
 
 

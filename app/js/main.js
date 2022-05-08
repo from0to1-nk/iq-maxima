@@ -92,30 +92,52 @@ var reviewSwiper = new Swiper(".awards__slider", {
 });
 
 ///////////////////////////////PREFERENCE SLIDER//////////////////////////
-let slidePreference = document.querySelectorAll('.preference-slide');
+try {
+    let slidePreference = document.querySelectorAll('.preference-slide');
 
-function addF(el, arr) {
-    if (el.nextElementSibling) {
-        el.nextElementSibling.classList.add('active');
+    function addF(el, arr) {
+        if (el.nextElementSibling) {
+            el.nextElementSibling.classList.add('active');
 
-    } else {
-        arr[0].classList.add('active');
+        } else {
+            arr[0].classList.add('active');
+        }
+        el.classList.remove('active', 'move');
+
     }
-    el.classList.remove('active', 'move');
 
-}
-
-function indexAdd(targetEl, arr) {
-    if (targetEl.nextElementSibling) {
-        targetEl.nextElementSibling.style.zIndex = +targetEl.style.zIndex + 1
-    } else {
-        arr[0].style.zIndex = +arr[arr.length - 1].style.zIndex + 1
+    function indexAdd(targetEl, arr) {
+        if (targetEl.nextElementSibling) {
+            targetEl.nextElementSibling.style.zIndex = +targetEl.style.zIndex + 1
+        } else {
+            arr[0].style.zIndex = +arr[arr.length - 1].style.zIndex + 1
+        }
     }
-}
 
-function animationAdd(targetEl) {
-    targetEl.classList.add('move');
-}
+    function animationAdd(targetEl) {
+        targetEl.classList.add('move');
+    }
+
+    addIndex(slidePreference);
+
+    [...slidePreference].forEach(item => {
+        item.addEventListener('click', function () {
+            const thisSlide = this;
+
+            animationAdd(thisSlide);
+            indexAdd(thisSlide, slidePreference);
+            setTimeout(addF, 1000, thisSlide, slidePreference);
+        })
+    })
+
+    document.querySelector('.preference-slider__btn').addEventListener('click', function () {
+        let activeSlide = document.querySelector('.preference-slide.active');
+
+        animationAdd(activeSlide);
+        indexAdd(activeSlide, slidePreference)
+        setTimeout(addF, 1000, activeSlide, slidePreference);
+    })
+} catch {}
 
 function addIndex(arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -123,54 +145,33 @@ function addIndex(arr) {
     }
 
 }
-
-addIndex(slidePreference);
-
-[...slidePreference].forEach(item => {
-    item.addEventListener('click', function () {
-        const thisSlide = this;
-
-        animationAdd(thisSlide);
-        indexAdd(thisSlide, slidePreference);
-        setTimeout(addF, 1000, thisSlide, slidePreference);
-    })
-})
-
-document.querySelector('.preference-slider__btn').addEventListener('click', function () {
-    let activeSlide = document.querySelector('.preference-slide.active');
-
-    animationAdd(activeSlide);
-    indexAdd(activeSlide, slidePreference)
-    setTimeout(addF, 1000, activeSlide, slidePreference);
-})
 ///////////////////////////////technology SLIDER//////////////////////////
+try {
+    let slideTec = document.querySelectorAll('.technology__slide');
 
-let slideTec = document.querySelectorAll('.technology__slide');
-
-addIndex(slideTec);
-[...slideTec].forEach(item => {
-    item.addEventListener('click', function () {
-
-        console.log(this)
-        animationAdd(this);
-        indexAdd(this, slideTec);
-        setTimeout(addF, 300, this, slideTec);
+    addIndex(slideTec);
+    [...slideTec].forEach(item => {
+        item.addEventListener('click', function () {
+            animationAdd(this);
+            indexAdd(this, slideTec);
+            setTimeout(addF, 300, this, slideTec);
+        })
     })
-})
-document.querySelector('.technology__slider-button').addEventListener('click', function () {
-    let activeSlide = document.querySelector('.technology__slide.active');
+    document.querySelector('.technology__slider-button').addEventListener('click', function () {
+        let activeSlide = document.querySelector('.technology__slide.active');
 
-    animationAdd(activeSlide);
-    indexAdd(activeSlide, slideTec)
-    setTimeout(addF, 1000, activeSlide, slideTec);
-})
+        animationAdd(activeSlide);
+        indexAdd(activeSlide, slideTec)
+        setTimeout(addF, 1000, activeSlide, slideTec);
+    })
+} catch {}
+
 /////////////sticky/////////////////////////
 
 const boxInNav = document.querySelector('.js-menu-fixed');
 const boxToTop = offset(boxInNav).top;
 const nav = document.querySelector('.page-nav');
-const navContainer = document.querySelector('.preference');
-
+const navContainer = nav.nextElementSibling;
 
 
 function offset(el) {
@@ -357,3 +358,205 @@ document.querySelectorAll('.js-animated-button').forEach(el => {
         this.appendChild(wave)
     })
 })
+////////////////////////
+
+const subtitle = document.querySelectorAll('.services__item-suptitle');
+
+for (let index = 0; index < subtitle.length; index++) {
+    console.log(subtitle[index])
+    if (subtitle[index].innerText.length > 14) {
+        subtitle[index].style.cssText = 'font-size:41px'
+    }
+}
+///////////////////
+
+// build tween
+// var tween = TweenMax.to("#animate", 100, {
+//     autoAlpha: 0,
+//     perspective: 55,
+//     rotationY: 90,
+//     ease: Power0.easeNone
+// });
+const accTitiles = document.querySelectorAll('.seo-include__button');
+const accText = document.querySelectorAll('.panel.open');
+accTitiles.forEach(item => {
+    item.addEventListener('click', function () {
+        let panel = this.nextElementSibling;
+        if (item.classList.contains('active')) {
+            item.classList.remove('active');
+            panel.classList.remove('open');
+        } else {
+            this.classList.add('active');
+            panel.classList.add('open');
+        }
+    })
+})
+//////////////////////select//////////////////////////////
+document.querySelectorAll('.card').forEach((elSelectParent) => {
+    selected(elSelectParent)
+})
+
+
+
+
+function selected(elSelectParent) {
+    const elSelectNative = elSelectParent.getElementsByClassName("js-selectNative")[0];
+    const elSelectCustom = elSelectParent.getElementsByClassName("js-selectCustom")[0];
+    const elSelectCustomBox = elSelectCustom.children[0];
+    const elSelectCustomOpts = elSelectCustom.children[1];
+    const customOptsList = Array.from(elSelectCustomOpts.children);
+    const optionsCount = customOptsList.length;
+    const defaultLabel = elSelectCustomBox.getAttribute("data-value");
+
+
+    let optionChecked = "";
+    let optionHoveredIndex = -1;
+
+
+    // Toggle custom select visibility when clicking the box
+    elSelectCustomBox.addEventListener("click", (e) => {
+        const isClosed = !elSelectCustom.classList.contains("isActive");
+
+        if (isClosed) {
+            openSelectCustom();
+        } else {
+            closeSelectCustom();
+        }
+    });
+
+    function openSelectCustom() {
+        elSelectCustom.classList.add("isActive");
+        // Remove aria-hidden in case this was opened by a user
+        // who uses AT (e.g. Screen Reader) and a mouse at the same time.
+        elSelectCustom.setAttribute("aria-hidden", false);
+
+        if (optionChecked) {
+            const optionCheckedIndex = customOptsList.findIndex(
+                (el) => el.getAttribute("data-value") === optionChecked
+            );
+            updateCustomSelectHovered(optionCheckedIndex);
+        }
+
+        // Add related event listeners
+        document.addEventListener("click", watchClickOutside);
+        document.addEventListener("keydown", supportKeyboardNavigation);
+    }
+
+    function closeSelectCustom() {
+        elSelectCustom.classList.remove("isActive");
+
+        elSelectCustom.setAttribute("aria-hidden", true);
+
+        updateCustomSelectHovered(-1);
+
+        // Remove related event listeners
+        document.removeEventListener("click", watchClickOutside);
+        document.removeEventListener("keydown", supportKeyboardNavigation);
+    }
+
+    function updateCustomSelectHovered(newIndex) {
+        const prevOption = elSelectCustomOpts.children[optionHoveredIndex];
+        const option = elSelectCustomOpts.children[newIndex];
+
+        if (prevOption) {
+            prevOption.classList.remove("isHover");
+        }
+        if (option) {
+            option.classList.add("isHover");
+        }
+
+        optionHoveredIndex = newIndex;
+    }
+
+    function updateCustomSelectChecked(value, text) {
+        const prevValue = optionChecked;
+
+        const elPrevOption = elSelectCustomOpts.querySelector(
+            `[data-value="${prevValue}"`
+        );
+        const elOption = elSelectCustomOpts.querySelector(`[data-value="${value}"`);
+
+        if (elPrevOption) {
+            elPrevOption.classList.remove("isActive");
+        }
+
+        if (elOption) {
+            elOption.classList.add("isActive");
+        }
+
+        elSelectCustomBox.textContent = text;
+        optionChecked = value;
+    }
+
+    function watchClickOutside(e) {
+        const didClickedOutside = !elSelectCustom.contains(event.target);
+        if (didClickedOutside) {
+            closeSelectCustom();
+        }
+    }
+
+    function supportKeyboardNavigation(e) {
+        // press down -> go next
+        if (event.keyCode === 40 && optionHoveredIndex < optionsCount - 1) {
+            let index = optionHoveredIndex;
+            e.preventDefault(); // prevent page scrolling
+            updateCustomSelectHovered(optionHoveredIndex + 1);
+        }
+
+        // press up -> go previous
+        if (event.keyCode === 38 && optionHoveredIndex > 0) {
+            e.preventDefault(); // prevent page scrolling
+            updateCustomSelectHovered(optionHoveredIndex - 1);
+        }
+
+        // press Enter or space -> select the option
+        if (event.keyCode === 13 || event.keyCode === 32) {
+            e.preventDefault();
+
+            const option = elSelectCustomOpts.children[optionHoveredIndex];
+            const value = option && option.getAttribute("data-value");
+
+            if (value) {
+                elSelectNative.value = value;
+                updateCustomSelectChecked(value, option.textContent);
+            }
+            closeSelectCustom();
+        }
+
+        // press ESC -> close selectCustom
+        if (event.keyCode === 27) {
+            closeSelectCustom();
+        }
+    }
+
+    // Update selectCustom value when selectNative is changed.
+    elSelectNative.addEventListener("change", (e) => {
+        const value = e.target.value;
+        const elRespectiveCustomOption = elSelectCustomOpts.querySelectorAll(
+            `[data-value="${value}"]`
+        )[0];
+
+        updateCustomSelectChecked(value, elRespectiveCustomOption.textContent);
+    });
+
+    // Update selectCustom value when an option is clicked or hovered
+    customOptsList.forEach(function (elOption, index) {
+        elOption.addEventListener("click", (e) => {
+            const value = e.target.getAttribute("data-value");
+
+            // Sync native select to have the same value
+            elSelectNative.value = value;
+            updateCustomSelectChecked(value, e.target.textContent);
+            closeSelectCustom();
+        });
+
+        elOption.addEventListener("mouseenter", (e) => {
+            updateCustomSelectHovered(index);
+        });
+
+        // TODO: Toggle these event listeners based on selectCustom visibility
+    });
+}
+
+
+//////////////////////end select////////////////////////////////////////////////

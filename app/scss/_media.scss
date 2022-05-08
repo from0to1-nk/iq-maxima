@@ -1,4 +1,7 @@
 @media (max-width:1600px) {
+    .seo-calc__inner{
+        flex-wrap: wrap;
+    }
     .services__item-wrapper {
         position: relative;
         padding-top: 25px;
@@ -8,7 +11,14 @@
         width: 100%;
         max-width: 100%;
     }
-
+    .seo-calc__content {
+        max-width: 100%;
+               padding-right: 20px;
+    }
+    .seo-calc__form-wrapper{
+        width: 100%;
+        margin-top: 0;
+    }
     .header__menu {
         margin-top: -10px;
         margin-bottom: -10px;
@@ -102,19 +112,23 @@
     }
 }
 
-
-
 @media (max-width:1400px) {
     .technology-box {
         max-width: 100%;
         margin-bottom: 25px;
     }
 
-    .technology__slider-button {
-
-        right: 100px;
-
+    .technology__slider-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
     }
+
+    .technology__slide-img img {
+        width: 100%;
+        object-fit: contain;
+        height: 100%;
+    }
+
 
     .technology__inner {
         display: block;
@@ -155,7 +169,14 @@
     .all-project__item:nth-child(even) {
         display: none;
     }
-
+    .seo-calc__form-selectBox{
+        display: block;
+    }
+    .card{width: 320px;
+    margin-left: auto;margin-right: auto;}
+    .card+.card {
+        margin-left: auto;
+    }
     .connect__content-title {
         font-size: 24px;
         line-height: 36px;
@@ -206,9 +227,49 @@
     .header__menu {
         display: flex;
     }
+
 }
 
 @media (max-width:1000px) {
+    .awardas__inner{
+        padding-top: 50px;
+    }
+    .main-rewievs__inner{
+        padding-bottom: 50px;
+    }
+    .seo-calc__inner,.seo-include__inner {
+        padding-right: 15px;
+    }
+    .seo-about__content-wrapper {
+        margin-bottom: 80px;
+    }
+
+    .seo-about__add {
+        padding-right: 15px;
+    }
+.seo-calc__form-wrapper{
+    padding-left: 15px;
+}
+    .imageBox__item {
+        height: 250px;
+    }
+
+    .seo-about {
+        padding-top: 80px;
+    }
+
+    .seo-about__imageBox {
+        grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    }
+
+    .services {
+        padding-bottom: 90px;
+    }
+
+    .seo-about__content {
+        padding-right: 15px;
+    }
+
     .header {
         position: relative;
 
@@ -296,8 +357,9 @@
 
     .header__menu-link {
         display: block;
-                padding: 20px 10px;
+        padding: 20px 10px;
     }
+
     .drop-down__item,
     .drop-down__item:hover {
         color: #3D3D3D;
@@ -475,6 +537,54 @@
 }
 
 @media (max-width:800px) {
+    .seo-banner__title{
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .seo-banner{
+        margin-bottom: 80px;
+    }
+    .main-rewievs__inner{
+        padding-top: 90px;
+    }
+    .seo-preference__inner{
+        padding: 50px 0;
+    }
+    .seo-preference__inner{
+        justify-content: space-around;
+    }
+    .seo-include {
+        padding-top: 90px;}
+    .seo-calc__form-title{
+        font-size: 45px;
+    }
+    .seo-about {
+        padding-top: 85px;
+    }
+
+    .blue-box__inner {
+        padding: 52px 20px 52px 20px;
+
+    }
+
+    .add__text {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .blue-box__suptitle {
+        font-size: 50px;
+        margin-left: -10px;
+    }
+
+    .blue-box__title {
+        margin-top: -38px;
+    }
+
+    .services__wrapper {
+        display: block;
+    }
+
     .footer__social-list {
         padding-top: 10px;
     }
@@ -542,6 +652,51 @@
 }
 
 @media (max-width:470px) {
+    .seo-preference__title {
+        font-size: 35px;
+        line-height: 44px;}
+    .seo-calc__form{
+        padding: 15px 20px;
+    }
+    .selectNative,
+.selectCustom, .card {
+   width: 100%;
+}
+
+    .seo-about__text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .all-project__item-img {
+        height: 200px;
+    }
+
+    .blue-box__suptitle {
+        font-size: 40px;
+    }
+
+    .services__item {
+        padding-top: 20px;
+    }
+
+    .title {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .services__item-title {
+        margin-top: 0;
+    }
+
+    .technology__slider {
+        overflow: visible;
+    }
+
+    .technology__slide-inner {
+        grid-template-columns: repeat(2, minmax(110px, 130px));
+    }
+
     .text-block__img {
         height: 300px;
     }
