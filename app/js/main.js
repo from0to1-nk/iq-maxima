@@ -92,44 +92,45 @@ var reviewSwiper = new Swiper(".awards__slider", {
 });
 
 ///////////////////////////////PREFERENCE SLIDER//////////////////////////
-try {
-    let slidePreference = document.querySelectorAll('.preference-slide');
 
-    function addF(el, arr) {
-        if (el.nextElementSibling) {
-            el.nextElementSibling.classList.add('active');
+let slidePreference = document.querySelectorAll('.preference-slide');
 
-        } else {
-            arr[0].classList.add('active');
-        }
-        el.classList.remove('active', 'move');
+function addF(el, arr) {
+    if (el.nextElementSibling) {
+        el.nextElementSibling.classList.add('active');
 
+    } else {
+        arr[0].classList.add('active');
     }
+    el.classList.remove('active', 'move');
 
-    function indexAdd(targetEl, arr) {
-        if (targetEl.nextElementSibling) {
-            targetEl.nextElementSibling.style.zIndex = +targetEl.style.zIndex + 1
-        } else {
-            arr[0].style.zIndex = +arr[arr.length - 1].style.zIndex + 1
-        }
+}
+
+function indexAdd(targetEl, arr) {
+    if (targetEl.nextElementSibling) {
+        targetEl.nextElementSibling.style.zIndex = +targetEl.style.zIndex + 1
+    } else {
+        arr[0].style.zIndex = +arr[arr.length - 1].style.zIndex + 1
     }
+}
 
-    function animationAdd(targetEl) {
-        targetEl.classList.add('move');
-    }
+function animationAdd(targetEl) {
+    targetEl.classList.add('move');
+}
 
-    addIndex(slidePreference);
+addIndex(slidePreference);
 
-    [...slidePreference].forEach(item => {
-        item.addEventListener('click', function () {
-            const thisSlide = this;
+[...slidePreference].forEach(item => {
+    item.addEventListener('click', function () {
+        const thisSlide = this;
 
-            animationAdd(thisSlide);
-            indexAdd(thisSlide, slidePreference);
-            setTimeout(addF, 1000, thisSlide, slidePreference);
-        })
+        animationAdd(thisSlide);
+        indexAdd(thisSlide, slidePreference);
+        setTimeout(addF, 1000, thisSlide, slidePreference);
     })
+})
 
+try {
     document.querySelector('.preference-slider__btn').addEventListener('click', function () {
         let activeSlide = document.querySelector('.preference-slide.active');
 
@@ -138,6 +139,7 @@ try {
         setTimeout(addF, 1000, activeSlide, slidePreference);
     })
 } catch {}
+
 
 function addIndex(arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -560,3 +562,56 @@ function selected(elSelectParent) {
 
 
 //////////////////////end select////////////////////////////////////////////////
+
+const tl1 = gsap.to('.logo-bunner', {
+    opacity: 0,
+    duration: .5,
+    ease: 'slow'
+});
+
+const tl = gsap.timeline();
+tl.delay(1)
+
+
+tl.to('.main-bunner__title', {
+    left: 0,
+    duration: .5,
+    ease: "power2.out"
+});
+tl.to('.main-bunner__text', {
+    bottom: 0,
+    duration: .5,
+    opacity: 1,
+    ease: 'slow'
+});
+tl.to('.main-banner__slider', {
+    opacity: 1,
+    duration: .5,
+    ease: 'slow'
+}, "<")
+tl.to('.header', {
+    left: 0,
+    ease: "power2.out"
+})
+
+const buttons = gsap.to('.main-bunner__btn-box', {
+    opacity: 1,
+    duration: .5,
+})
+var currentDelay = buttons.delay();
+buttons.delay(2);
+
+const t2 = gsap.to('.main-banner__bottom', {
+    opacity: 1,
+    duration: .5
+})
+
+ScrollTrigger.create({
+        animation: t2,
+        trigger: '.main-banner',
+        start: 'top top',
+        end: 'bottom',
+        scrub: true,
+    }
+
+)

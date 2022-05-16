@@ -128,8 +128,8 @@
 .main-bunner {
     &__inner {
         display: flex;
-        padding-top: 127px;
-        padding-bottom: 154px;
+        // padding-top: 127px;
+        // padding-bottom: 154px;
         position: relative;
         justify-content: space-between;
     }
@@ -2353,9 +2353,40 @@ section {
 }
 
 
+//////////////////start animation//////////////
 
-
-
+.main-bunner__title{position: relative; left: -100%;}
+.main-bunner__text{position: relative;opacity: 0; bottom: -100px;}
+.main-banner__slider{opacity: 0}
+.main-bunner__btn-box{opacity: 0}
+.main-banner__bottom{opacity: 0}
+.logo-bunner{
+    position: absolute;top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 30%;
+    transform: translate(-50%,-50%);
+    img{width: 100%;height: 100%;}
+}
+.header{position: relative; left: -100%;}
+.header::before {
+    content: '';
+    position: absolute;
+    -webkit-filter: blur(58px);
+    filter: blur(58px);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: -webkit-gradient(linear, left top, right top, color-stop(-.31%, #D9E2EB), to(rgba(217,226,235,0)));
+    background: -o-linear-gradient(left, #D9E2EB -.31%, rgba(217,226,235,0) 100%);
+    background: linear-gradient(90deg, #D9E2EB -.31%, rgba(217,226,235,0) 100%);
+}
+#wrapper__parallax{height: 100vh;}
+.main-banner{height:100%;
+display: flex;
+justify-content: center;
+flex-direction: column}
 
 
 @import"media";
