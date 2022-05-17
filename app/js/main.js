@@ -78,7 +78,7 @@ var reviewSwiper = new Swiper(".awards__slider", {
     spaceBetween: 0,
     pagination: {
         el: ".swiper-pagination",
-        clicable: true,
+        clickable: true,
     },
     breakpoints: {
         // when window width is >= 
@@ -601,13 +601,13 @@ const buttons = gsap.to('.main-bunner__btn-box', {
 var currentDelay = buttons.delay();
 buttons.delay(2);
 
-const t2 = gsap.to('.main-banner__bottom', {
+const tl2 = gsap.to('.main-banner__bottom', {
     opacity: 1,
     duration: .5
 })
 
 ScrollTrigger.create({
-        animation: t2,
+        animation: tl2,
         trigger: '.main-banner',
         start: 'top top',
         end: 'bottom',
@@ -615,3 +615,57 @@ ScrollTrigger.create({
     }
 
 )
+
+const animSections = document.querySelectorAll('.js-scroll-anim')
+
+animSections.forEach(item => {
+    const tl3 = gsap.to(item, {
+        opacity: 0,
+        //scaleY: .3,
+        duration: .3,
+        scrollTrigger: {
+            trigger: item,
+            start: 'top top',
+            scrub: true
+        },
+        markers: true
+    })
+})
+
+// const tl4 = gsap.to('.awards__slider', {
+//     right: 0,
+//     ease: "power2.out",
+//     duration: .5,
+// })
+
+// ScrollTrigger.create({
+//         animation: tl4,
+//         trigger: '.awardas__inner',
+//         start: 'top 20%',
+//         toggleActions: 'restart revese none none'
+//     }
+
+// )
+
+const tl5 = gsap.timeline();
+tl5.fromTo('.all-project', {
+    y: '200px',
+
+}, {
+    y: '0px',
+
+})
+
+
+ScrollTrigger.create({
+    animation: tl5,
+    trigger: '.all-project',
+    duration: .5,
+    start: 'top bottom',
+    end: 'top center',
+    // start: topAnimation,
+    scrub: true,
+
+    // toggleActions: 'play none none none'
+    //pin: true
+});
