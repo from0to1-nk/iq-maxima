@@ -70,7 +70,7 @@
     }
 
     &-link {
-        transition: color, .5s;
+        transition: color, .3s;
     }
 
     &-item:hover {
@@ -130,6 +130,7 @@
         display: flex;
         // padding-top: 127px;
         // padding-bottom: 154px;
+        padding-bottom: 30px;
         position: relative;
         justify-content: space-between;
     }
@@ -208,9 +209,38 @@
 
     .swiper-slide img {
         display: block;
-        object-fit: contain;
+        object-fit: contain;  filter: grayscale(1); 
+    }
+    .swiper-slide:hover{
+        img{
+        filter: grayscale(0);}
     }
 }
+
+// .main-banner__slide-rio{
+//     background-image: url('../images/rio.png');
+//     &:hover{
+//         background-image: url('../images/rio-color.png');
+//     }
+// }
+// .main-banner__slide-optima{
+//     background-image: url('../images/optima.png');
+//     &:hover{
+//         background-image: url('../images/optima-color.png');
+//     }
+// }
+// .main-banner__slide-mettem{
+//     background-image: url('../images/mettem.png');
+//     &:hover{
+//         background-image: url('../images/mettem-color.png');
+//     }
+// }
+// .main-banner__slide-familyRoom{
+//     background-image: url('../images/familyRoom.png');
+//     &:hover{
+//         background-image: url('../images/familyRoom-color.png');
+//     }
+// }
 
 
 ///////////////////////////SLIDER///////////////////////////
@@ -405,6 +435,20 @@
     }
 }
 
+.page-nav__list-link:hover{
+    color: #DA4848;
+}
+.all-project__link:hover{
+    color: #DA4848;
+    font-weight: 600;
+}
+
+
+.footer__nav-item:hover{
+.footer__nav-link{
+   border-bottom: #007aff 1px solid;
+}
+}
 /////////////////////START PROJECT//////////////////////////
 .all-project {
     position: relative;
@@ -704,7 +748,7 @@
     padding-bottom: 20px;
     padding-left: 80px;
     padding-right: 25px;
-   // max-width: 520px;
+    // max-width: 520px;
 
     &-suptitle {
         color: rgba(255, 255, 255, 0.25);
@@ -1712,16 +1756,43 @@ section {
 ///////////////////seo-banner///////////////
 
 .seo-banner {
+    min-height: 325px;
     color: #FFFFFF;
     padding-top: 75px;
     padding-bottom: 75px;
     text-align: center;
-    background-image: url('../images/seo-bunner.jpg');
+    background-image: url('../images/bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
+    position: relative;
     filter: drop-shadow(0px 4px 49px rgba(0, 0, 0, 0.25));
+
+    &__content::before {
+        content: '';
+        position: absolute;
+        //right: 140px;
+        right: -270px;
+        bottom: -78px;
+        //bottom: 0;
+        background-image: url('../images/righr_cub.png');
+        width: 151px;
+        height: 210px;
+        background-repeat: no-repeat;
+    }
+    &__content::after {
+        content: '';
+        position: absolute;
+      //  left: 100px;
+      left: -321px;
+      bottom: -75px;
+       // bottom: 0;
+        background-image: url('../images/left_cub.png');
+        width: 237px;
+        height: 188px;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
 
     &__title {
         font-family: 'Montserrat-SemiBold';
@@ -1732,7 +1803,7 @@ section {
     }
 
     &__subtitle {
-        padding-top: 42px;
+        padding-top: 33px;
         font-family: 'Montserrat-Black';
         font-weight: 800;
         font-size: 96px;
@@ -1746,9 +1817,14 @@ section {
         font-weight: 500;
         font-size: 18px;
         line-height: 25px;
+    }
+
+    &__content {
+        position: relative;
         max-width: 1090px;
         margin: 0 auto;
     }
+
 }
 
 .header.page-header {
@@ -1903,6 +1979,7 @@ section {
     display: flex;
     padding-right: 100px;
     align-items: center;
+
     &::before {
         position: absolute;
         content: '';
@@ -1975,13 +2052,13 @@ section {
     line-height: 30px;
     font-family: 'Montserrat-SemiBold';
     margin-top: -33px;
-   
+
 }
 
 .seo-calc__form-selectBox {
     display: flex;
-  justify-content: center;
-   
+    justify-content: center;
+
 }
 
 .seo-calc__form-btn {
@@ -2273,10 +2350,12 @@ section {
 .card+.card {
     margin-left: 16px;
 }
-.card{
+
+.card {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
 .selectNative {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -2355,20 +2434,48 @@ section {
 
 //////////////////start animation//////////////
 
-.main-bunner__title{position: relative; left: -100%;}
-.main-bunner__text{position: relative;opacity: 0; bottom: -100px;}
-.main-banner__slider{opacity: 0}
-.main-bunner__btn-box{opacity: 0}
-.main-banner__bottom{opacity: 0}
-.logo-bunner{
-    position: absolute;top: 50%;
+.main-bunner__title {
+    position: relative;
+    left: -120%;
+}
+
+.main-bunner__text {
+    position: relative;
+    opacity: 0;
+    bottom: -100px;
+}
+
+.main-banner__slider {
+    opacity: 0
+}
+
+.main-bunner__btn-box {
+    opacity: 0
+}
+
+.main-banner__bottom {
+    opacity: 0
+}
+
+.logo-bunner {
+    position: absolute;
+    top: 50%;
     left: 50%;
     width: 50%;
     height: 30%;
-    transform: translate(-50%,-50%);
-    img{width: 100%;height: 100%;}
+    transform: translate(-50%, -50%);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
-.header{position: relative; left: -100%;}
+
+.header {
+    position: relative;
+    left: -100%;
+}
+
 .header::before {
     content: '';
     position: absolute;
@@ -2378,17 +2485,29 @@ section {
     height: 100%;
     left: 0;
     top: 0;
-    background: -webkit-gradient(linear, left top, right top, color-stop(-.31%, #D9E2EB), to(rgba(217,226,235,0)));
-    background: -o-linear-gradient(left, #D9E2EB -.31%, rgba(217,226,235,0) 100%);
-    background: linear-gradient(90deg, #D9E2EB -.31%, rgba(217,226,235,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(-.31%, #D9E2EB), to(rgba(217, 226, 235, 0)));
+    background: -o-linear-gradient(left, #D9E2EB -.31%, rgba(217, 226, 235, 0) 100%);
+    background: linear-gradient(90deg, #D9E2EB -.31%, rgba(217, 226, 235, 0) 100%);
 }
-#wrapper__parallax{height: 100vh;}
-.main-banner{height:100%;
-display: flex;
-justify-content: center;
-flex-direction: column}
-//.awards__slider{right: -100%;}
-.all-project{position: relative;}
+
+#wrapper__parallax {
+    height: 100vh;
+}
+
+.main-banner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+
+.awards__slider {
+    right: -100%;
+}
+
+.all-project {
+    position: relative;
+}
 
 
 

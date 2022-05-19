@@ -187,8 +187,9 @@ function offset(el) {
 }
 
 function fixedNav(scroll) {
-    let distanse = boxToTop - scroll
-    if (distanse <= 150) {
+    let distanse = boxToTop - scroll;
+    console.log(distanse)
+    if (distanse <= 130) {
         nav.classList.add('fixed');
         navContainer.classList.add('page-nav--empty')
     } else {
@@ -632,20 +633,20 @@ animSections.forEach(item => {
     })
 })
 
-// const tl4 = gsap.to('.awards__slider', {
-//     right: 0,
-//     ease: "power2.out",
-//     duration: .5,
-// })
+const tl4 = gsap.to('.awards__slider', {
+    right: 0,
+    ease: "power2.out",
+    duration: .5,
+})
 
-// ScrollTrigger.create({
-//         animation: tl4,
-//         trigger: '.awardas__inner',
-//         start: 'top 20%',
-//         toggleActions: 'restart revese none none'
-//     }
+ScrollTrigger.create({
+        animation: tl4,
+        trigger: '.awardas__inner',
+        start: 'top 20%',
+        toggleActions: 'restart revese none none'
+    }
 
-// )
+)
 
 const tl5 = gsap.timeline();
 tl5.fromTo('.all-project', {

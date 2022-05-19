@@ -20,8 +20,11 @@ a {
     text-decoration: none;
     cursor: pointer;
     color: inherit;
+    transition: color, .3s;
 }
-
+a:hover{
+    color: #007aff;
+}
 ul,
 li {
     margin: 0;
