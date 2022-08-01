@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a class="logo" href="#"><img src="images/logo_blue.svg" alt="LOGO"></a>
+                <button class="burger__menu">
+                    <span class="bar-top"></span>
+                    <span class="bar-mid"></span>
+                    <span class="bar-bot"></span>
+                </button>
+                <nav class="header__menu">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item header__drop-down">
+                            <a class="header__menu-link" href="#">Услуги</a> <button class="drop-down__btn"
+                                type="button"><img src="images/header-arr.png" alt=""></button>
+                            <ul class="drop-down__menu">
+                                <li class="drop-down__item">
+                                    <a href="#" class="drop-down__link">Медийная реклама</a>
+                                </li>
+                                <li class="drop-down__item">
+                                    <a href="#" class="drop-down__link">Медийная реклама</a>
+                                </li>
+                                <li class="drop-down__item">
+                                    <a href="#" class="drop-down__link">Медийная реклама</a>
+                                </li>
+                                <li class="drop-down__item">
+                                    <a href="#" class="drop-down__link">Медийная реклама</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link" href="#">О нас</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link" href="#">Кейсы</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link" href="#">Карьера</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link" href="#">Блог</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__communications">
+                    <a class="header__communications-link" href="tel:+78002001376">8 (800) 200-13-73</a>
+                    <a class="header__communications-link" href="tel:+74752282800">8 (475) 228-28-00</a>
+                    <button class="header__communications-btn button-gradient js-modal-button js-animated-button"
+                        type="button">Заказать
+                        звонок</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-content">
+        <div class="page-content__inner">
+            <section class="main-about">
+                <div class="main-about__box main-about__content">
+                    <h1 class="main-about__title">О компании</h1>
+                    <div class="main-about__text">
+                        МЫ — digital-агентство с
+                        многолетним опытом,
+                        создающее технологичные и современные проекты
+                    </div>
+                    <div class="main-about__counter">
+                        <div class="counter__item">
+                            <div class="counter__title counter__title--dubl">15</div>
+                            <div class="counter__text">15 лет <br>на
+                                рынке Рунета</div>
+                        </div>
+                        <div class="counter__item">
+                            <div class="counter__title counter__title--dubl">100+</div>
+                            <div class="counter__text">успешных проектов</div>
+                        </div>
+                        <div class="counter__item">
+                            <div class="counter__title counter__title--dubl">20</div>
+                            <div class="counter__text">номинаций и наград</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-about__box main-about__picther">
+                    <div class="main-about__picther-inner">
+                        <div class="main-about__picther-img"><img src="/images-about/ab-1.jpg" alt=""></div>
+
+                        <p>IQ MAXIMA</p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+    <div class="page-content js-menu-fixed">
+        <div class="page-content__inner">
+            <nav class="page-nav">
+                <ul class="page-nav__list">
+                    <li class="page-nav__list-item ">
+                        <a class="page-nav__list-link active" href="#main-about">Пара слов о нас</a>
+                    </li>
+                    <li class="page-nav__list-item">
+                        <a class="page-nav__list-link" href="#awardas">Достижения</a>
+                    </li>
+                    <li class="page-nav__list-item">
+                        <a class="page-nav__list-link" href="#clietns">Наши клиенты</a>
+                    </li>
+                    <li class="page-nav__list-item">
+                        <a class="page-nav__list-link" href="#main-rewievs">Отзывы</a>
+                    </li>
+                    <li class="page-nav__list-item">
+                        <a class="page-nav__list-link" href="#employees">Наши сотрудники</a>
+                    </li>
+                    <li class="page-nav__list-item">
+                        <a class="page-nav__list-link" href="#vacancies">Ищем новых людей!</a>
+                    </li>
+                    <li class="page-nav__list-item">
+                        <a class="page-nav__list-link" href="#services">Услуги</a>
+                    </li>
+                    <li class="page-nav__list-item">
+                        <a class="page-nav__list-link" href="#connect">Оставить заявку</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="main-about__about js-scroll-sections" id="main-about">
+                <div class="about__inner">
+                    <div class="about__title">Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span> , sed
+                        do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    <p class="about__text"> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="about__w-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="page-content__inner">
+            <section class="awardas page-nav--empty js-scroll-sections" id="awardas">
+                <div class="awardas__inner">
+                    <div class="title awardas__title">Наши достижения</div>
+                    <div class="awards__text-box">
+                        <p class="awards__text">Мы работаем более много лет и собрали массу наград (пример того,
+                            что есть текст)</p>
+                        <a href="#" class="services__item-link awards__link">все награды</a>
+                    </div>
+
+                    <div class="awards__slider-wrapper">
+                        <div class="awards__slider mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="awards__slide swiper-slide">
+                                    <div class="awards__slide-inner">
+                                        <div class="awards__slide-titleBox">
+                                            <div class="awards__slide-supTitle">Рейтинг Рунета</div>
+                                            <span class="awards__slide-year">2017</span>
+                                            <div class="awards__slide-title">Рейтинг Рунета</div>
+                                        </div>
+                                        <div class="awards__slide-content">2</div>
+                                        <div class="awards__slide-text">
+                                            <span>Отрасль</span>
+                                            <p>Мебель и интерьер</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="awards__slide swiper-slide">
+                                    <div class="awards__slide-inner">
+                                        <div class="awards__slide-titleBox">
+                                            <div class="awards__slide-supTitle">Рейтинг Рунета</div>
+                                            <span class="awards__slide-year">2017</span>
+                                            <div class="awards__slide-title">Рейтинг Рунета</div>
+                                        </div>
+                                        <div class="awards__slide-content">2</div>
+                                        <div class="awards__slide-text">
+                                            <span>Отрасль</span>
+                                            <p>Мебель и интерьер</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="awards__slide swiper-slide">
+                                    <div class="awards__slide-inner">
+                                        <div class="awards__slide-titleBox">
+                                            <div class="awards__slide-supTitle">Рейтинг Рунета</div>
+                                            <span class="awards__slide-year">2017</span>
+                                            <div class="awards__slide-title">Рейтинг Рунета</div>
+                                        </div>
+                                        <div class="awards__slide-content">2</div>
+                                        <div class="awards__slide-text">
+                                            <span>Отрасль</span>
+                                            <p>Мебель и интерьер</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="awards__slide swiper-slide">
+                                    <div class="awards__slide-inner">
+                                        <div class="awards__slide-titleBox">
+                                            <div class="awards__slide-supTitle">Рейтинг Рунета</div>
+                                            <span class="awards__slide-year">2017</span>
+                                            <div class="awards__slide-title">Рейтинг Рунета</div>
+                                        </div>
+                                        <div class="awards__slide-content">2</div>
+                                        <div class="awards__slide-text">
+                                            <span>Отрасль</span>
+                                            <p>Мебель и интерьер</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="awards__slide swiper-slide">
+                                    <div class="awards__slide-inner">
+                                        <div class="awards__slide-titleBox">
+                                            <div class="awards__slide-supTitle">Рейтинг Рунета</div>
+                                            <span class="awards__slide-year">2017</span>
+                                            <div class="awards__slide-title">Рейтинг Рунета</div>
+                                        </div>
+                                        <div class="awards__slide-content">2</div>
+                                        <div class="awards__slide-text">
+                                            <span>Отрасль</span>
+                                            <p>Мебель и интерьер</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="awards__slide swiper-slide">
+                                    <div class="awards__slide-inner">
+                                        <div class="awards__slide-titleBox">
+                                            <div class="awards__slide-supTitle">Рейтинг Рунета</div>
+                                            <span class="awards__slide-year">2017</span>
+                                            <div class="awards__slide-title">Рейтинг Рунета</div>
+                                        </div>
+                                        <div class="awards__slide-content">2</div>
+                                        <div class="awards__slide-text">
+                                            <span>Отрасль</span>
+                                            <p>Мебель и интерьер</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination awards__slider-pagination"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="page-content__inner">
+            <section class="clietns page-nav--empty js-scroll-sections" id="clietns">
+                <div class="title clietns__title">Наши клиенты</div>
+                <p class="clietns__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="clients__slider-wrapper">
+                    <div class="scene__parallax">
+                        <div class="clients__parallax parallax-layes" data-depth-x="0.20" data-depth-y="0"
+                            data-pointer-events="true"></div>
+
+                    </div>
+                    <div class="scene__parallax scene__parallax--zindex">
+
+                        <div class="clients__parallax-vawe parallax-layes" data-depth-x="0.60" data-depth-y="0"
+                            data-pointer-events="true"></div>
+                    </div>
+                    <div class=" clients__slider mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide clients__slide">
+                                <div class="clients__slide-inner">
+                                    <img src="/images/mettem-color.png" alt="">
+                                    <img src="/images/rio-color.png" alt="">
+                                    <img src="/images/optima-color.png" alt="">
+                                    <img src="/images/familyRoom-color.png" alt="">
+                                    <img src="/images/mettem-color.png" alt="">
+                                    <img src="/images/rio-color.png" alt="">
+                                    <img src="/images/mettem-color.png" alt="">
+                                    <img src="/images/rio-color.png" alt="">
+                                    <img src="/images/optima-color.png" alt="">
+                                    <img src="/images/familyRoom-color.png" alt="">
+                                    <img src="/images/mettem-color.png" alt="">
+                                    <img src="/images/rio-color.png" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide clients__slide">
+                                <div class="clients__slide-inner">
+                                    <img src="/images/mettem-color.png" alt="">
+                                    <img src="/images/rio-color.png" alt="">
+                                    <img src="/images/optima-color.png" alt="">
+                                    <img src="/images/familyRoom-color.png" alt="">
+                                    <img src="/images/mettem-color.png" alt="">
+                                    <img src="/images/rio-color.png" alt="">
+                                    <img src="/images/mettem-color.png" alt="">
+                                    <img src="/images/rio-color.png" alt="">
+                                    <img src="/images/optima-color.png" alt="">
+                                    <img src="/images/familyRoom-color.png" alt="">
+                                    <img src="/images/mettem-color.png" alt="">
+                                    <img src="/images/rio-color.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next clients__slide-btns"><img src="/images-about/client-arr.svg"
+                                alt=""></div>
+                        <div class="swiper-button-prev clients__slide-btns"><img src="/images-about/client-arr.svg"
+                                alt=""></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="page-content__inner">
+            <section class="main-rewievs page-nav--empty js-scroll-sections" id="main-rewievs">
+                <div class="main-rewievs__inner">
+                    <div class="main-rewievs__title title">Отзывы о IQ MAXIMA</div>
+                    <p class="main-rewievs__text"><span>2 500 000 посетителей</span> в месяц
+                        на сайтах наших клиентов</p>
+
+
+                    <div class="main-rewievs__slider-wrapper">
+
+                        <div class="main-rewievs__slider mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide main-rewievs__slide">
+                                    <div class="main-rewievs__slide-inner">
+                                        <div class="main-rewievs__slide-top">
+                                            <div class="slide-top__box">
+                                                <div class="slide-top__title">ТРЦ «РИО» ЛЕНИНГРАДСКИЙ</div>
+                                                <a href="#" class="slide-top__link">www.mebel-leningradka.ru</a>
+                                            </div>
+                                            <div class="slide-top__box">
+                                                <div class="slide-top__text">Сайт торгового центра продвигается
+                                                    по регионам Москва и Московская область. За 6 лет работы,
+                                                    привлечено более 1000 новых арендаторов, в Топ-10 выведено
+                                                    свыше 200 запросов.</div>
+                                            </div>
+                                        </div>
+                                        <p class="main-rewievs__slide-text">«С компанией «Максима-Х» работаем
+                                            на протяжении 6 лет, за эти годы сотрудничества наши партнеры
+                                            показали себя с лучшей стороны. В лице компании мы видим
+                                            перспективного партнера с которым можно налаживать длительные и
+                                            взаимовыгодные отношения. Когда нашим проектом занимаются
+                                            профессионалы столь высокого уровня, у нас нет сомнений в его
+                                            успехе. Благодарим за честность и креативный подход к делу, который
+                                            вы выполняете на отлично.»</p>
+                                        <p class="main-rewievs__slide-text main-rewievs__slide-text--right">
+                                            Вартанян А.С., генеральный директор</p>
+                                        <a class="main-rewievs__slide-button js-animated-button" href="#">Подробнее о
+                                            проекте</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide main-rewievs__slide">
+                                    <div class="main-rewievs__slide-inner">
+                                        <div class="main-rewievs__slide-top">
+                                            <div class="slide-top__box">
+                                                <div class="slide-top__title">ТРЦ «РИО» ЛЕНИНГРАДСКИЙ</div>
+                                                <a href="#" class="slide-top__link">www.mebel-leningradka.ru</a>
+                                            </div>
+                                            <div class="slide-top__box">
+                                                <div class="slide-top__text">Сайт торгового центра продвигается
+                                                    по регионам Москва и Московская область. За 6 лет работы,
+                                                    привлечено более 1000 новых арендаторов, в Топ-10 выведено
+                                                    свыше 200 запросов.</div>
+                                            </div>
+                                        </div>
+                                        <p class="main-rewievs__slide-text">«С компанией «Максима-Х» работаем
+                                            на протяжении 6 лет, за эти годы сотрудничества наши партнеры
+                                            показали себя с лучшей стороны. В лице компании мы видим
+                                            перспективного партнера с которым можно налаживать длительные и
+                                            взаимовыгодные отношения. Когда нашим проектом занимаются
+                                            профессионалы столь высокого уровня, у нас нет сомнений в его
+                                            успехе. Благодарим за честность и креативный подход к делу, который
+                                            вы выполняете на отлично.»</p>
+                                        <p class="main-rewievs__slide-text main-rewievs__slide-text--right">
+                                            Вартанян А.С., генеральный директор</p>
+                                        <a class="main-rewievs__slide-button js-animated-button" href="#">Подробнее о
+                                            проекте</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide main-rewievs__slide">
+                                    <div class="main-rewievs__slide-inner">
+                                        <div class="main-rewievs__slide-top">
+                                            <div class="slide-top__box">
+                                                <div class="slide-top__title">ТРЦ «РИО» ЛЕНИНГРАДСКИЙ</div>
+                                                <a href="#" class="slide-top__link">www.mebel-leningradka.ru</a>
+                                            </div>
+                                            <div class="slide-top__box">
+                                                <div class="slide-top__text">Сайт торгового центра продвигается
+                                                    по регионам Москва и Московская область. За 6 лет работы,
+                                                    привлечено более 1000 новых арендаторов, в Топ-10 выведено
+                                                    свыше 200 запросов.</div>
+                                            </div>
+                                        </div>
+                                        <p class="main-rewievs__slide-text">«С компанией «Максима-Х» работаем
+                                            на пр проектом занимаются
+                                            профессионалы столь высокого уровня, у нас нет сомнений в его
+                                            успехе. Благодарим за честность и креативный подход к делу, который
+                                            вы выполняете на отлично.»</p>
+                                        <p class="main-rewievs__slide-text main-rewievs__slide-text--right">
+                                            Вартанян А.С., генеральный директор</p>
+                                        <a class="main-rewievs__slide-button js-animated-button" href="#">Подробнее о
+                                            проекте</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar main-rewievs__scrollbar"></div>
+
+                    </div>
+
+
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="page-content__inner">
+            <section class="employees js-scroll-sections  page-nav--empty" id="employees">
+                <div class="employees__inner">
+                    <div class="employees__item" style="background-image: url('images-about/1-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/2-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/3-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/4-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/5-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+
+                    <div class="employees__item" style="background-image: url('images-about/6-piple.jpg')">
+                        <p class="employees__name">Виктория Кондратьева</p>
+                        <p class="employees__post">Технический директор
+                            IQ MAXIMA</p>
+                    </div>
+
+                    <div class="employees__item" style="background-image: url('images-about/6-piple.jpg')">
+                        <p class="employees__name">Виктория Кондратьева</p>
+                        <p class="employees__post">Технический директор
+                            IQ MAXIMA</p>
+                    </div>
+
+                    <div class="employees__item" style="background-image: url('images-about/8-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/9-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/10-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/11-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+
+
+                    <div class="employees__item" style="background-image: url('images-about/12-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/13-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/14-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/15-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/16-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/busy-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/18-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/19-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/20-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                    <div class="employees__item" style="background-image: url('images-about/21-piple.jpg')">
+                        <p class="employees__name">Иванов Иван Иванович</p>
+                        <p class="employees__post">дизайнер IQ MAXIMA</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <section class="vacancies js-scroll-sections" id="vacancies">
+        <div class="scene__parallax">
+            <div class="vacancies__parallax-vawe parallax-layes" data-depth-x="0.20" data-depth-y="0"
+                data-pointer-events="true"></div>
+        </div>
+
+        <div class="container">
+            <div class="vacancies__inner">
+
+                <div class="vacancies__title">Ищем новых людей</div>
+                <div class="vacancies__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.</div>
+                <a class="vacancies__btn" href="#">К вакансиям</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-content">
+        <div class="page-content__inner">
+            <section class="services page-nav--empty  js-scroll-sections" id="services">
+                <div class="services__inner">
+                    <div class="services__title title js-scroll-anim">Услуги</div>
+                    <div class="services__text js-scroll-anim">
+                        <p>«IQ MAXIMA» — полносервисное digital‑агентство с 14‑летним опытом.
+                        </p>
+                        <p>Мы создадим веб-ресурс и продвинем его в ТОП-10 выдачи поисковых систем с гарантией
+                            результата.</p>
+                    </div>
+                    <div class="services__wrapper">
+                        <div class="services__item-wrapper js-scroll-anim">
+                            <div class="services__item">
+                                <div class="services__item-inner">
+                                    <div class="services__item-suptitle">
+                                        Интернет реклама
+                                    </div>
+                                    <div class="services__item-title">
+                                        Интернет реклама
+                                    </div>
+                                    <ul class="services__item-list">
+                                        <li>Контекстная реклама</li>
+                                        <li>Медийная реклама/Programmatic</li>
+                                        <li>Геореклама </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="services__item-link">Заказать услугу</a>
+                            </div>
+                            <div class="scene__parallax">
+                                <div class="services__item-parallax parallax-layes" data-depth-x="0.50" data-depth-y="0"
+                                    data-pointer-events="true"></div>
+                            </div>
+                        </div>
+                        <div class="services__item-wrapper js-scroll-anim">
+                            <div class="services__item">
+                                <div class="services__item-inner">
+                                    <div class="services__item-suptitle">
+                                        Интернет реклама
+                                    </div>
+                                    <div class="services__item-title">
+                                        Интернет реклама
+                                    </div>
+                                    <ul class="services__item-list">
+                                        <li>Контекстная реклама</li>
+                                        <li>Медийная реклама/Programmatic</li>
+                                        <li>Геореклама </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="services__item-link">Заказать услугу</a>
+                            </div>
+                            <div class="scene__parallax">
+                                <div class="services__item-parallax parallax-layes" data-depth-x="0.50" data-depth-y="0"
+                                    data-pointer-events="true"></div>
+                            </div>
+                        </div>
+                        <div class="services__item-wrapper js-scroll-anim">
+                            <div class="services__item">
+                                <div class="services__item-inner">
+                                    <div class="services__item-suptitle">
+                                        Интернет реклама
+                                    </div>
+                                    <div class="services__item-title">
+                                        Интернет реклама
+                                    </div>
+                                    <ul class="services__item-list">
+                                        <li>Контекстная реклама</li>
+                                        <li>Медийная реклама/Programmatic</li>
+                                        <li>Геореклама </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="services__item-link">Заказать услугу</a>
+                            </div>
+                            <div class="scene__parallax">
+                                <div class="services__item-parallax parallax-layes" data-depth-x="0.50" data-depth-y="0"
+                                    data-pointer-events="true"></div>
+                            </div>
+                        </div>
+                        <div class="services__item-wrapper js-scroll-anim">
+                            <div class="services__item">
+                                <div class="services__item-inner">
+                                    <div class="services__item-suptitle">
+                                        Интернет реклама
+                                    </div>
+                                    <div class="services__item-title">
+                                        Интернет реклама
+                                    </div>
+                                    <ul class="services__item-list">
+                                        <li>Контекстная реклама</li>
+                                        <li>Медийная реклама/Programmatic</li>
+                                        <li>Геореклама </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="services__item-link">Заказать услугу</a>
+                            </div>
+                            <div class="scene__parallax">
+                                <div class="services__item-parallax parallax-layes" data-depth-x="0.50" data-depth-y="0"
+                                    data-pointer-events="true"></div>
+                            </div>
+                        </div>
+                        <div class="services__item-wrapper js-scroll-anim">
+                            <div class="services__item">
+                                <div class="services__item-inner">
+                                    <div class="services__item-suptitle">
+                                        Интернет реклама
+                                    </div>
+                                    <div class="services__item-title">
+                                        Интернет реклама
+                                    </div>
+                                    <ul class="services__item-list">
+                                        <li>Контекстная реклама</li>
+                                        <li>Медийная реклама/Programmatic</li>
+                                        <li>Геореклама </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="services__item-link">Заказать услугу</a>
+                            </div>
+                            <div class="scene__parallax">
+                                <div class="services__item-parallax parallax-layes" data-depth-x="0.50" data-depth-y="0"
+                                    data-pointer-events="true"></div>
+                            </div>
+                        </div>
+                        <div class="services__item-wrapper js-scroll-anim">
+                            <div class="services__item">
+                                <div class="services__item-inner">
+                                    <div class="services__item-suptitle">
+                                        Интернет реклама
+                                    </div>
+                                    <div class="services__item-title">
+                                        Интернет реклама
+                                    </div>
+                                    <ul class="services__item-list">
+                                        <li>Контекстная реклама</li>
+                                        <li>Медийная реклама/Programmatic</li>
+                                        <li>Геореклама </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="services__item-link">Заказать услугу</a>
+                            </div>
+                            <div class="scene__parallax">
+                                <div class="services__item-parallax parallax-layes" data-depth-x="0.50" data-depth-y="0"
+                                    data-pointer-events="true"></div>
+                            </div>
+                        </div>
+                        <div class="scene__parallax">
+                            <div class="services__wrapper-parallax parallax-layes" data-depth="0.70"
+                                data-pointer-events="true"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="page-content__inner">
+            <section class="connect page-nav--empty about-connect js-scroll-sections" id="connect">
+                <div class="scene__parallax">
+                    <div class="main-form__parallax parallax-layes" data-depth-x="0.50" data-depth-y="0"
+                        data-pointer-events="true"></div>
+                </div>
+                <div class="connect__inner">
+                    <div class="connect__content">
+                        <div class="connect__content-title">Нужна помощь? Оставьте заявку</div>
+                        <div class="connect__content-text">Мы подготовим предложение по продвижению вашего сайта
+                            по
+                            Москве и МО и дадим советы по улучшению его видимости в поисковых системах.
+                        </div>
+                    </div>
+
+                    <form class="connect__form">
+                        <div class="connect__form-inner">
+                            <div class="connect__form-title">Оставьте заявку и мы свяжемся с Вами в течение 30
+                                минут.</div>
+                            <input type="text" class="connect__form-input" data-validate-field="address"
+                                placeholder="Адрес Вашего сайта">
+                            <input type="text" class="connect__form-input" data-validate-field="tel"
+                                placeholder="Телефон">
+                            <button class="connect__form-button yellow-btn js-animated-button" type="submit">Отправить
+                                заявку</button>
+                            <div class="connect__form-text">Нажимая “отправить заявку” вы соглашаетесь с
+                                политикой
+                                конфеденциальности</div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="page-content  js-stop-fixed">
+
+        <div class="page-content__inner page-nav--empty ">
+
+            <div class="about__bottom-block">
+                <div class="scene__parallax">
+                    <div class="about__bottom__parallax parallax-layes" data-depth-x="0.20" data-depth-y="0"
+                        data-pointer-events="true"></div>
+                </div>
+                <div class="about__title">Lorem ipsum dolor sit amet, consectetur <span> adipiscing elit</span>, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+                <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <footer class="footer ">
+        <div class="footer__top">
+            <div class="container">
+                <div class="footer__top-inner">
+                    <nav class="footer__nav">
+                        <ul class="footer__nav-list">
+                            <li class='footer__nav-item'>
+                                <a class="footer__nav-link" href="#">О компании</a>
+                            </li>
+                            <li class='footer__nav-item'>
+                                <a class="footer__nav-link" href="#">Кейсы</a>
+                            </li>
+                            <li class='footer__nav-item'>
+                                <a class="footer__nav-link" href="#">Карьера</a>
+                            </li>
+                            <li class='footer__nav-item'>
+                                <a class="footer__nav-link" href="#">Блог</a>
+                            </li>
+                            <li class='footer__nav-item'>
+                                <a class="footer__nav-link" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="footer__tel" href="tel:88002007313">8 800 200-73-13</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-inner">
+                    <div class="footer__bottom-item">
+                        <div class="footer__bottom-title">Интернет реклама</div>
+                        <ul class="footer__bottom-list">
+                            <li class="footer__bottom-listItem"><a href="#">- Контекстная реклама</a></li>
+                            <li class="footer__bottom-listItem"><a href="#">- Медийная реклама/Programmatic</a></li>
+                            <li class="footer__bottom-listItem"><a href="#">- Геореклама</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__bottom-item">
+                        <div class="footer__bottom-title">Социальные сети</div>
+                        <ul class="footer__bottom-list">
+                            <li class="footer__bottom-listItem"><a href="#"> - Реклама в социальных сетях</a></li>
+                            <li class="footer__bottom-listItem"><a href="#"> - SMM</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__bottom-item">
+                        <div class="footer__bottom-title">Маркетплейсы </div>
+                        <ul class="footer__bottom-list">
+                            <li class="footer__bottom-listItem"><a href="#">- Реклама на маркетплейсах </a></li>
+                            <li class="footer__bottom-listItem"><a href="#">- Сопровождение маркетплейсов</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__bottom-item">
+                        <div class="footer__bottom-title">Аналитика </div>
+                        <ul class="footer__bottom-list">
+                            <li class="footer__bottom-listItem"><a href="#"> - WEB аналитика - Настройка
+                                    веб-аналитики </a></li>
+                            <li class="footer__bottom-listItem"><a href="#"> - Сквозная аналитика</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__bottom-item">
+                        <div class="footer__bottom-title">Сайты
+
+                        </div>
+                        <ul class="footer__bottom-list">
+                            <li class="footer__bottom-listItem"><a href="#"> - Создание сайтов</a></li>
+                            <li class="footer__bottom-listItem"><a href="#"> - Продвижение сайтов</a></li>
+                            <li class="footer__bottom-listItem"><a href="#"> - Поддержка сайтов </a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__bottom-item">
+                        <div class="footer__bottom-title"> Приложения</div>
+                        <ul class="footer__bottom-list">
+                            <li class="footer__bottom-listItem"><a href="#"> - Разработка приложений Android/IOS</a>
+                            </li>
+                            <li class="footer__bottom-listItem"><a href="#"> - ASO продвижение приложений</a></li>
+                            <li class="footer__bottom-listItem"><a href="#"> - Mobile performance-маркетинг</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer__copy">
+            <div class="container">
+                <div class="footer__copy-inner">
+                    <p class="footer__copy-adress">г. Тамбов, Монтажников 6а</p>
+                    <p class="footer__copy-copy">© 2022 агентство IQ Maxima</p>
+
+                    <ul class="footer__social-list">
+                        <li><a href="#">
+                                <img src="images/faceb.svg" alt="facebook">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/inst.svg" alt="instagramm">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/vk.svg" alt="vk">
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+
+</html>

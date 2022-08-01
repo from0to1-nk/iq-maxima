@@ -73,7 +73,7 @@ var reviewSwiper = new Swiper(".main-rewievs__slider", {
         }
     },
 });
-var reviewSwiper = new Swiper(".awards__slider", {
+var awardsSwiper = new Swiper(".awards__slider", {
     slidesPerView: 1,
     spaceBetween: 0,
     pagination: {
@@ -90,7 +90,18 @@ var reviewSwiper = new Swiper(".awards__slider", {
         }
     },
 });
+try {
+    var swiperClient = new Swiper(".clients__slider", {
+        slidesPerView: 1,
+        spaceBetween: 70,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+} catch (error) {
 
+}
 ///////////////////////////////PREFERENCE SLIDER//////////////////////////
 
 let slidePreference = document.querySelectorAll('.preference-slide');
@@ -188,7 +199,7 @@ function offset(el) {
 
 function fixedNav(scroll) {
     let distanse = boxToTop - scroll;
-    console.log(distanse)
+
     if (distanse <= 130) {
         nav.classList.add('fixed');
         navContainer.classList.add('page-nav--empty')
@@ -283,7 +294,7 @@ document.querySelectorAll('.page-nav__list-link').forEach(link => {
             top,
             behavior: 'smooth'
         });
-        console.log('click')
+
     })
 })
 ////////////////////////////animated menu//////////////////
@@ -366,7 +377,7 @@ document.querySelectorAll('.js-animated-button').forEach(el => {
 const subtitle = document.querySelectorAll('.services__item-suptitle');
 
 for (let index = 0; index < subtitle.length; index++) {
-    console.log(subtitle[index])
+
     if (subtitle[index].innerText.length > 14) {
         subtitle[index].style.cssText = 'font-size:41px'
     }
@@ -563,110 +574,115 @@ function selected(elSelectParent) {
 
 
 //////////////////////end select////////////////////////////////////////////////
-
-const tl1 = gsap.to('.logo-bunner', {
-    opacity: 0,
-    duration: .5,
-    ease: 'slow'
-});
-
-const tl = gsap.timeline();
-tl.delay(1)
+try {
 
 
-tl.to('.main-bunner__title', {
-    left: 0,
-    duration: .5,
-    ease: "power2.out"
-});
-tl.to('.main-bunner__text', {
-    bottom: 0,
-    duration: .5,
-    opacity: 1,
-    ease: 'slow'
-});
-tl.to('.main-banner__slider', {
-    opacity: 1,
-    duration: .5,
-    ease: 'slow'
-}, "<")
-tl.to('.header', {
-    left: 0,
-    ease: "power2.out"
-})
-
-const buttons = gsap.to('.main-bunner__btn-box', {
-    opacity: 1,
-    duration: .5,
-})
-var currentDelay = buttons.delay();
-buttons.delay(2);
-
-const tl2 = gsap.to('.main-banner__bottom', {
-    opacity: 1,
-    duration: .5
-})
-
-ScrollTrigger.create({
-        animation: tl2,
-        trigger: '.main-banner',
-        start: 'top top',
-        end: 'bottom',
-        scrub: true,
-    }
-
-)
-
-const animSections = document.querySelectorAll('.js-scroll-anim')
-
-animSections.forEach(item => {
-    const tl3 = gsap.to(item, {
+    const tl1 = gsap.to('.logo-bunner', {
         opacity: 0,
-        //scaleY: .3,
-        duration: .3,
-        scrollTrigger: {
-            trigger: item,
-            start: 'top top',
-            scrub: true
-        },
-        markers: true
+        duration: .5,
+        ease: 'slow'
+    });
+
+    const tl = gsap.timeline();
+    tl.delay(1)
+
+
+    tl.to('.main-bunner__title', {
+        left: 0,
+        duration: .5,
+        ease: "power2.out"
+    });
+    tl.to('.main-bunner__text', {
+        bottom: 0,
+        duration: .5,
+        opacity: 1,
+        ease: 'slow'
+    });
+    tl.to('.main-banner__slider', {
+        opacity: 1,
+        duration: .5,
+        ease: 'slow'
+    }, "<")
+    tl.to('.header', {
+        left: 0,
+        ease: "power2.out"
     })
-})
 
-const tl4 = gsap.to('.awards__slider', {
-    right: 0,
-    ease: "power2.out",
-    duration: .5,
-})
+    const buttons = gsap.to('.main-bunner__btn-box', {
+        opacity: 1,
+        duration: .5,
+    })
+    var currentDelay = buttons.delay();
+    buttons.delay(2);
 
-ScrollTrigger.create({
-        animation: tl4,
-        trigger: '.awardas__inner',
-        start: 'top 20%',
-        toggleActions: 'restart revese none none'
-    }
+    const tl2 = gsap.to('.main-banner__bottom', {
+        opacity: 1,
+        duration: .5
+    })
 
-)
+    ScrollTrigger.create({
+            animation: tl2,
+            trigger: '.main-banner',
+            start: 'top top',
+            end: 'bottom',
+            scrub: true,
+        }
 
-const tl5 = gsap.timeline();
-tl5.fromTo('.all-project', {
-    y: '200px',
+    )
 
-}, {
-    y: '0px',
+    const animSections = document.querySelectorAll('.js-scroll-anim')
 
-})
+    animSections.forEach(item => {
+        const tl3 = gsap.to(item, {
+            opacity: 0,
+            //scaleY: .3,
+            duration: .3,
+            scrollTrigger: {
+                trigger: item,
+                start: 'top top',
+                scrub: true
+            },
+            markers: true
+        })
+    })
+
+    const tl4 = gsap.to('.awards__slider', {
+        right: 0,
+        ease: "power2.out",
+        duration: .5,
+    })
+
+    ScrollTrigger.create({
+            animation: tl4,
+            trigger: '.awardas__inner',
+            start: 'top 20%',
+            toggleActions: 'restart revese none none'
+        }
+
+    )
+
+    const tl5 = gsap.timeline();
+    tl5.fromTo('.all-project', {
+        y: '200px',
+
+    }, {
+        y: '0px',
+
+    })
 
 
-ScrollTrigger.create({
-    animation: tl5,
-    trigger: '.all-project',
-    duration: .5,
-    start: 'top bottom',
-    end: 'top center',
-    // start: topAnimation,
-    scrub: true,
+    ScrollTrigger.create({
+        animation: tl5,
+        trigger: '.all-project',
+        duration: .5,
+        start: 'top bottom',
+        end: 'top center',
+        // start: topAnimation,
+        scrub: true,
 
-    // toggleActions: 'play none none none'
-    //pin: true
-});
+        // toggleActions: 'play none none none'
+        //pin: true
+    });
+} catch (error) {
+
+}

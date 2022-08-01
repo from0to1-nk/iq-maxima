@@ -155,11 +155,38 @@ body {
     max-width: 1400px;
     background-image: url('../images/roundWave.svg');
 }
-
+.clients__parallax {
+   background-size: cover;
+    background-image: url('../images/roundWave.svg');
+ 
+}
+.clients__parallax-vawe{
+    background-position: left;
+    left: -40px!important;
+   height: 110%;
+    top: -20px!important;
+    background-image: url('../images/wave.svg');  
+}
+.vacancies__parallax-vawe{
+    background-position: left;
+    left: 381px!important;
+   height: 120%;
+    top: -50px!important;
+    background-image: url('../images/wave.svg');  
+}
 .project__parallax {
     background-image: url('../images/project-wave.svg');
 }
-
+.about__bottom__parallax{
+    background-image: url('../images/wave.svg');
+    left: auto !important;
+    right: -32%!important;
+    bottom: -111px;
+    top: auto !important;
+}
+.about__bottom-block .scene__parallax{
+    overflow: visible;
+}
 .slider__parallax {
     background-image: url('../images/wave.svg');
 }
