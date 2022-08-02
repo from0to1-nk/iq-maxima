@@ -2535,7 +2535,7 @@ section {
         position: absolute;
         font-family: 'Montserrat-Black', sans-serif;
         font-weight: 800;
-        font-size: 5vw;
+        font-size: 4.7vw;
         line-height: 80px;
         color: #ECEFF3;
         z-index: -1;
@@ -2833,9 +2833,17 @@ section {
 .vacancies {
     position: relative;
     color: #FFFFFF;
-    padding: 35px 0;
+    padding-top: 35px;
+    padding-bottom: 35px;
 
-    &::before {
+    &__inner {
+        position: relative;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        padding-left: 35px;
+    }
+
+    &__inner ::before {
         position: absolute;
         content: '';
         left: 0;
@@ -2845,14 +2853,7 @@ section {
         background-image: url(../images/seo-form-bg-2.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-
-    }
-
-    &__inner {
-        position: relative;
-        padding-left: 375px;
-        padding-top: 80px;
-        padding-bottom: 80px;
+z-index: -1;
     }
 
     &__inner ::after {
@@ -2864,7 +2865,7 @@ section {
         width: calc(100% - 375px);
         left: 375px;
         box-shadow: 0px 9px 31px rgba(0, 0, 0, 0.07);
-        z-index: -1;
+        z-index: -2;
     }
 
     &__title {
@@ -2896,22 +2897,23 @@ section {
     background: rgba(255, 255, 255, 0.61);
     box-shadow: 5px 4px 36px rgba(0, 0, 0, 0.06);
     margin-top: 140px;
-    margin-bottom: 170px; position: relative;
+    margin-bottom: 170px;
+    position: relative;
 }
 
 @media(max-width: 1000px) {
-    .vacancies__inner {
-        padding-left: 0;
-    }
-
+  
     .vacancies__text {
         font-size: 18px;
         line-height: 25px;
         margin-bottom: 20px;
     }
-
+    .employees {
+       
+        padding-bottom: 90px;
+    }
     .vacancies__inner {
-
+        padding-right: 10px;
         padding-top: 45px;
         padding-bottom: 45px;
     }
@@ -3035,21 +3037,24 @@ section {
 }
 
 @media (max-width:470px) {
-    .about__bottom-block{
+    .about__bottom-block {
         padding: 40px 15px;
         margin-top: 60px;
         margin-bottom: 100px;
     }
+
     .vacancies__title {
         font-size: 24px;
         line-height: 32px;
 
     }
+
     .vacancies__text {
         font-size: 14px;
         line-height: 25px;
-      
+
     }
+
     .main-about__title {
         font-size: 30px;
         line-height: 59px;
